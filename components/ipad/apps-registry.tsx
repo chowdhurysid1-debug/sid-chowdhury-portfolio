@@ -9,6 +9,7 @@ import {
   Anchor,
   CloudSun,
   Radar,
+  Rocket,
 } from "lucide-react";
 import type { ComponentType } from "react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
@@ -57,6 +58,13 @@ export const apps: AppDefinition[] = [
     gradient: "from-violet-500 to-purple-700",
     kind: "internal",
     inDock: true,
+  },
+  {
+    id: "ventures",
+    label: "Ventures",
+    icon: Rocket,
+    gradient: "from-indigo-500 to-violet-700",
+    kind: "internal",
   },
   {
     id: "cinema",

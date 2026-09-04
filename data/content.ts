@@ -646,3 +646,108 @@ export const forzaGarage = [
   { car: "Nissan Skyline GT-R V-Spec", year: "1999", tag: "Never gets old" },
   { car: "Mercedes-AMG One", year: "2021", tag: "Hypercar" },
 ];
+
+// Ventures. Every sentence here is built from the resume or from things Sid
+// has said directly. The detail pages are prose, not bullets, because the
+// bullets already live in the PDF.
+export type PortfolioCompany = {
+  name: string;
+  what: string;
+  outcome: string;
+};
+
+export type Venture = {
+  id: string;
+  name: string;
+  role: string;
+  dates: string;
+  location: string;
+  hook: string;
+  tagline: string;
+  body: string[];
+  highlights: { value: string; label: string }[];
+  portfolio?: PortfolioCompany[];
+  active?: boolean;
+};
+
+export const ventures: Venture[] = [
+  {
+    id: "epvf",
+    name: "EP Venture Fund",
+    role: "Co-Founder",
+    dates: "Oct 2025 - Present",
+    location: "Minneapolis, MN",
+    active: true,
+    hook: "A venture fund for founders who are legally too young to sign anything.",
+    tagline: "Minors can't sign contracts. That was the whole problem.",
+    body: [
+      "An under-18 founder cannot form a company, open a business bank account, or sign a contract. Every program for young founders either ignores that or works around it with a pitch competition and a gift card. So the fund runs on a fiscal sponsorship structure through the Foundation for Eden Prairie Schools. The paperwork is real, the money is real, and a fifteen-year-old is still the one building the thing.",
+      "The pipeline is modeled on how actual venture capital works, not on how a school assembly works. Quarterly pitches, milestone-based funding, and demonstrated demand required before a dollar moves. Twenty-two ventures sourced and screened. Three funded. $22,375 deployed as non-equity grants.",
+      "Writing the check is the easy half. I sit in an advisory capacity on all three, which in practice means pricing arguments, go-to-market decisions, and telling a founder the thing they do not want to hear.",
+    ],
+    highlights: [
+      { value: "22", label: "Screened" },
+      { value: "3", label: "Funded" },
+      { value: "$22,375", label: "Deployed" },
+      { value: "3", label: "Still advising" },
+    ],
+    portfolio: [
+      {
+        name: "Animation studio",
+        what: "Advised on pricing and go-to-market.",
+        outcome:
+          "Projected average contract value up 62%, 11 qualified leads, 4 pilot clients.",
+      },
+      {
+        name: "Chef marketplace",
+        what: "Advised on a 15% commission model.",
+        outcome: "18 chefs onboarded, 21 pilot bookings.",
+      },
+      {
+        name: "Elder care coordination",
+        what: "A platform for families managing an aging parent's care.",
+        outcome: "Funded and in build.",
+      },
+    ],
+  },
+  {
+    id: "junior-sharks",
+    name: "Junior Sharks",
+    role: "Co-Founder",
+    dates: "May 2024 - Aug 2026",
+    location: "Minneapolis, MN",
+    hook: "Twenty kids became 360, and the school district's numbers moved.",
+    tagline: "Where little fins make big waves.",
+    body: [
+      "It started with twenty students and no curriculum. It ended with 360+ across five elementary schools and one middle school, running an eight-workshop program that takes a third grader from an idea to an actual pitch: market research, budgeting, product design, financial planning, pitch strategy.",
+      "The end of every year is a Shark Tank competition, and the judges are not teachers being nice. They are Chamber of Commerce executives, entrepreneurs, and investors, evaluating 70+ student teams.",
+      "The number that mattered most was not ours. High school business class enrollment across the district went up 42%. The nine-year-olds grew into students who signed up for the class.",
+    ],
+    highlights: [
+      { value: "20 to 360+", label: "Students" },
+      { value: "6", label: "Schools" },
+      { value: "70+", label: "Teams judged" },
+      { value: "42%", label: "Enrollment lift" },
+    ],
+  },
+  {
+    id: "deca",
+    name: "DECA",
+    role: "Competition Leader",
+    dates: "Oct 2023 - Apr 2026",
+    location: "Eden Prairie High School",
+    hook: "Lost the first competition. Wrote the study system that fixed it.",
+    tagline: "Lost the first one. Wrote the book after.",
+    body: [
+      "The first competition was a loss. The response was a self-authored study system documenting every performance indicator, which stopped being a personal fix and became the chapter's core prep resource.",
+      "Third globally at ICDC in 2025 in Financial Services Team Decision Making, then a top-20 global finish in 2026, out of a chapter ranked first of 4,364.",
+      "Eighty-plus competitors trained through eight workshops and 100+ practice roleplays: roleplay structure, time management, test strategy. Their average scores went from 64 to 85 and up, and 32 advanced to state, double the year before.",
+    ],
+    highlights: [
+      { value: "3rd", label: "Globally, 2025" },
+      { value: "#1 of 4,364", label: "Chapter rank" },
+      { value: "80+", label: "Trained" },
+      { value: "64 to 85+", label: "Their scores" },
+    ],
+  },
+];

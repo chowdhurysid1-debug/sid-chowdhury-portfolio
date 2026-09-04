@@ -21,6 +21,7 @@ import { ListeningApp } from "@/components/apps/ListeningApp";
 import { GarageApp } from "@/components/apps/GarageApp";
 import { WeatherApp } from "@/components/apps/WeatherApp";
 import { FindMyApp } from "@/components/apps/FindMyApp";
+import { VenturesApp } from "@/components/apps/VenturesApp";
 
 const appComponents: Record<string, ComponentType> = {
   about: AboutApp,
@@ -32,6 +33,7 @@ const appComponents: Record<string, ComponentType> = {
   garage: GarageApp,
   weather: WeatherApp,
   findmy: FindMyApp,
+  ventures: VenturesApp,
 };
 
 export function IPadPage() {
