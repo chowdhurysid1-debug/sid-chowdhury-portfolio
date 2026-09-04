@@ -1,104 +1,146 @@
-import { Check, Wrench, Anchor } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { garage } from "@/data/content";
 
 export function GarageApp() {
+  const [openEntry, setOpenEntry] = useState<string | null>(
+    garage.log[0]?.problem ?? null,
+  );
+
   return (
-    <div className="mx-auto max-w-2xl px-6 py-6 sm:px-8">
-      <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-5">
-        <div className="flex items-start gap-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-500/10 text-sky-400">
-            <Anchor className="h-5 w-5" strokeWidth={1.75} />
+    <div className="min-h-full bg-[#0b0c0e]">
+      {/* Hazard stripe, the kind painted on a trailer bunk */}
+      <div className="h-1.5 w-full bg-[repeating-linear-gradient(45deg,#f59e0b_0px,#f59e0b_10px,#0b0c0e_10px,#0b0c0e_20px)] opacity-70" />
+
+      <div className="mx-auto max-w-2xl px-6 py-7 sm:px-8">
+        {/* Instrument panel */}
+        <div className="rounded-lg border border-zinc-800 bg-black p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="font-mono text-[11px] tracking-[0.25em] text-zinc-600 uppercase">
+                Vessel
+              </p>
+              <h1 className="mt-1 text-xl leading-tight font-semibold tracking-tight text-zinc-100 sm:text-2xl">
+                {garage.vessel}
+              </h1>
+              <p className="mt-2 flex items-center gap-2 font-mono text-[13px] text-emerald-400">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                </span>
+                {garage.status.toUpperCase()}
+              </p>
+            </div>
+
+            {/* Engine hour meter */}
+            <div className="shrink-0 rounded border border-zinc-800 bg-[#120e05] px-3 py-2 text-right">
+              <p className="font-mono text-2xl leading-none font-bold text-amber-500 tabular-nums">
+                {garage.hoursAdded}
+              </p>
+              <p className="mt-1 font-mono text-[10px] tracking-[0.15em] text-amber-700 uppercase">
+                Hrs added
+              </p>
+            </div>
           </div>
+
+          <div className="mt-4 flex items-baseline gap-2 border-t border-dashed border-zinc-800 pt-3">
+            <span className="font-mono text-[11px] tracking-[0.15em] text-zinc-600 uppercase">
+              Relationship
+            </span>
+            <span className="font-mono text-[13px] text-zinc-300">
+              {garage.relationship.toLowerCase()}
+            </span>
+          </div>
+        </div>
+
+        {/* Service log, formatted like a work order */}
+        <div className="mt-8">
+          <div className="flex items-baseline justify-between border-b border-zinc-800 pb-1.5">
+            <h2 className="font-mono text-[13px] tracking-[0.2em] text-zinc-400 uppercase">
+              Service log
+            </h2>
+            <span className="font-mono text-[11px] text-zinc-700">
+              {garage.log.length} entries
+            </span>
+          </div>
+
           <div>
-            <h1 className="text-lg font-semibold tracking-tight text-white">
-              {garage.vessel}
-            </h1>
-            <p className="mt-1 flex items-center gap-1.5 text-sm text-emerald-400">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              {garage.status}
-            </p>
-          </div>
-        </div>
+            {garage.log.map((entry, i) => (
+              <button
+                key={entry.problem}
+                type="button"
+                onClick={() =>
+                  setOpenEntry(
+                    openEntry === entry.problem ? null : entry.problem,
+                  )
+                }
+                className="flex w-full cursor-pointer gap-4 border-b border-zinc-900 py-4 text-left transition-colors duration-150 hover:bg-white/[0.02]"
+              >
+                <span className="pt-0.5 font-mono text-[13px] text-zinc-700 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
 
-        <div className="mt-5 grid grid-cols-2 gap-3">
-          <div className="rounded-xl bg-zinc-950 p-3">
-            <p className="text-lg font-semibold text-white">
-              {garage.hoursAdded}
-            </p>
-            <p className="text-[11px] tracking-wider text-zinc-500 uppercase">
-              Hours added
-            </p>
-          </div>
-          <div className="rounded-xl bg-zinc-950 p-3">
-            <p className="text-lg font-semibold text-white">
-              {garage.relationship}
-            </p>
-            <p className="text-[11px] tracking-wider text-zinc-500 uppercase">
-              Relationship status
-            </p>
-          </div>
-        </div>
-      </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[15px] font-medium text-zinc-100">
+                    {entry.problem}
+                  </p>
+                  <AnimatePresence initial={false}>
+                    {openEntry === entry.problem && entry.detail && (
+                      <motion.p
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.22 }}
+                        className="overflow-hidden font-mono text-[13px] leading-relaxed text-zinc-500"
+                      >
+                        <span className="block pt-1">{entry.detail}</span>
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
 
-      <section className="mt-7">
-        <h2 className="text-[11px] font-semibold tracking-widest text-zinc-500 uppercase">
-          Maintenance log
-        </h2>
-        <div className="mt-3 space-y-2">
-          {garage.log.map((entry) => (
-            <div
-              key={entry.problem}
-              className="rounded-xl border border-zinc-800 bg-zinc-900 p-4"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <p className="text-sm font-medium text-white">
-                  {entry.problem}
-                </p>
-                <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold tracking-wide text-emerald-400">
-                  <Check className="h-3 w-3" strokeWidth={3} />
+                {/* Stamped, not badged */}
+                <span
+                  className={`mt-0.5 h-fit shrink-0 rotate-[-4deg] border-2 px-2 py-0.5 font-mono text-[10px] font-bold tracking-[0.15em] ${
+                    entry.status === "UPGRADED"
+                      ? "border-amber-600/60 text-amber-500/90"
+                      : "border-emerald-600/60 text-emerald-500/90"
+                  }`}
+                >
                   {entry.status}
                 </span>
-              </div>
-              {entry.detail && (
-                <p className="mt-1.5 text-[13px] leading-relaxed text-zinc-400">
-                  {entry.detail}
-                </p>
-              )}
-            </div>
-          ))}
+              </button>
+            ))}
+          </div>
         </div>
-      </section>
 
-      <section className="mt-7">
-        <h2 className="text-[11px] font-semibold tracking-widest text-zinc-500 uppercase">
-          What this boat taught me
-        </h2>
-        <div className="mt-3 space-y-3">
-          {garage.lessons.map((lesson) => (
-            <div key={lesson.number} className="flex gap-4">
-              <span className="pt-0.5 font-mono text-sm text-zinc-600">
-                {lesson.number}
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-white">
+        {/* Margin notes */}
+        <div className="mt-8 border-l-2 border-amber-600/50 pl-5">
+          <h2 className="font-mono text-[13px] tracking-[0.2em] text-zinc-400 uppercase">
+            What it taught me
+          </h2>
+          <div className="mt-4 space-y-5">
+            {garage.lessons.map((lesson) => (
+              <div key={lesson.number}>
+                <p className="text-[15px] font-medium text-zinc-100">
                   {lesson.title}
                 </p>
-                <p className="mt-0.5 text-[13px] leading-relaxed text-zinc-400">
+                <p className="mt-1 text-[14px] leading-relaxed text-zinc-500">
                   {lesson.body}
                 </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </section>
 
-      <div className="mt-7 mb-4 flex gap-3 rounded-xl border border-zinc-800 bg-zinc-900 p-4">
-        <Wrench className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
-        <div>
-          <p className="text-[11px] font-semibold tracking-widest text-zinc-500 uppercase">
-            Current rabbit hole
+        {/* Open ticket */}
+        <div className="mt-8 mb-4 border border-dashed border-zinc-700 bg-black/40 p-4">
+          <p className="font-mono text-[10px] tracking-[0.2em] text-amber-600 uppercase">
+            Open ticket
           </p>
-          <p className="mt-1 text-sm leading-relaxed text-zinc-300">
+          <p className="mt-1.5 text-[15px] leading-relaxed text-zinc-300">
             {garage.rabbitHole}
           </p>
         </div>

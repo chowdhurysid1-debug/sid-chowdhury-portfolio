@@ -367,10 +367,104 @@ export type Playlist = {
   name: string;
   description: string;
   gradient: string;
+  // Paste a Spotify playlist share link's embed form here and the card turns
+  // into a real player: https://open.spotify.com/embed/playlist/<id>
+  embedUrl?: string;
+};
+
+// Real Stats for Spotify exports. Ranges are labeled in the order Sid pasted
+// them; confirm the mapping before treating the labels as exact.
+export type Track = { title: string; artist: string };
+
+export const spotifyStats = {
+  ranges: ["4 weeks", "6 months", "12 months"] as const,
+  artists: {
+    "4 weeks": [
+      "Drake",
+      "Zach Bryan",
+      "Morgan Wallen",
+      "Michael Jackson",
+      "Chris Stapleton",
+      "Don Toliver",
+      "Bruno Mars",
+      "Travis Scott",
+      "Kanye West",
+      "J. Cole",
+    ],
+    "6 months": [
+      "Drake",
+      "Zach Bryan",
+      "Morgan Wallen",
+      "Michael Jackson",
+      "Chris Stapleton",
+      "Don Toliver",
+      "Bruno Mars",
+      "Travis Scott",
+      "Kanye West",
+      "J. Cole",
+    ],
+    "12 months": [
+      "Drake",
+      "Don Toliver",
+      "Michael Jackson",
+      "Morgan Wallen",
+      "Kanye West",
+      "Travis Scott",
+      "America",
+      "Eagles",
+      "Pop Smoke",
+      "George Strait",
+    ],
+  } as Record<string, string[]>,
+  tracks: {
+    "4 weeks": [
+      { title: "Love Songs", artist: "Prospa, Kosmo Kint" },
+      { title: "Livin' The Dream", artist: "Morgan Wallen" },
+      { title: "TOO COOL TO BE CARELESS", artist: "PAWSA" },
+      { title: "Jamaican (Bam Bam) X Talk To You", artist: "Lunazer" },
+      { title: "Bulletproof", artist: "La Roux" },
+      { title: "Classic", artist: "Drake" },
+      { title: "You Are In My System (Club Mix)", artist: "Kerri Chandler" },
+      { title: "Dreams", artist: "Prospa" },
+      { title: "Heartache Medication", artist: "Jon Pardi" },
+      { title: "More Than My Hometown", artist: "Morgan Wallen" },
+    ],
+    "6 months": [
+      { title: "Classic", artist: "Drake" },
+      { title: "4Me 4Me", artist: "Malcolm Todd" },
+      { title: "2 Hard 4 The Radio", artist: "Drake" },
+      { title: "Earrings", artist: "Malcolm Todd" },
+      {
+        title: "It Never Rains in Southern California",
+        artist: "Albert Hammond",
+      },
+      { title: "4X4", artist: "Travis Scott" },
+      { title: "Don't Stop 'Til You Get Enough", artist: "Michael Jackson" },
+      { title: "Friday Night Fever", artist: "George Strait" },
+      { title: "Liberian Girl", artist: "Michael Jackson" },
+      { title: "Sister Golden Hair", artist: "America" },
+    ],
+    "12 months": [
+      { title: "DIE TRYING", artist: "PARTYNEXTDOOR, Drake, Yebba" },
+      { title: "Choosin' Texas", artist: "Ella Langley" },
+      { title: "Over My Dead Body", artist: "Drake" },
+      { title: "Southern Nights", artist: "Glen Campbell" },
+      {
+        title: "Right Back Where We Started From",
+        artist: "Maxine Nightingale",
+      },
+      { title: "Talkin' Tennessee", artist: "Morgan Wallen" },
+      { title: "Mr. Brightside", artist: "The Killers" },
+      { title: "Overture (from Whiplash)", artist: "Justin Hurwitz" },
+      { title: "My Way", artist: "Frank Sinatra" },
+      { title: "Say You Love Me", artist: "Fleetwood Mac" },
+    ],
+  } as Record<string, Track[]>,
 };
 
 export const listening = {
   year: "2026",
+  onRepeat: "Love Songs, Prospa",
   topArtists: [
     "Chris Stapleton",
     "Prospa",

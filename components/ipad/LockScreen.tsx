@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -34,15 +33,11 @@ export function LockScreen({ onUnlock }: { onUnlock: () => void }) {
       className="relative flex h-full w-full flex-col items-center justify-between overflow-hidden bg-zinc-950 px-6 pt-16 pb-12 text-center select-none"
       style={{ opacity }}
     >
-      <Image
-        src="/images/wallpaper.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        priority
-        className="object-cover brightness-[0.75]"
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/wallpaper.svg)" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
 
       <div className="relative">
         <p className="text-lg font-medium text-zinc-300">

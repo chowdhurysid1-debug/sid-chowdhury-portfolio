@@ -7,6 +7,8 @@ import {
   Clapperboard,
   AudioLines,
   Anchor,
+  CloudSun,
+  Radar,
 } from "lucide-react";
 import type { ComponentType } from "react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
@@ -75,6 +77,20 @@ export const apps: AppDefinition[] = [
     label: "Garage",
     icon: Anchor,
     gradient: "from-sky-500 to-blue-800",
+    kind: "internal",
+  },
+  {
+    id: "weather",
+    label: "Weather",
+    icon: CloudSun,
+    gradient: "from-sky-400 to-indigo-600",
+    kind: "internal",
+  },
+  {
+    id: "findmy",
+    label: "Find My",
+    icon: Radar,
+    gradient: "from-emerald-500 to-green-700",
     kind: "internal",
   },
   {

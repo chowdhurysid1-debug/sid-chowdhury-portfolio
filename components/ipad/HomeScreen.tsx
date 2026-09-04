@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { gridApps, dockApps, type AppDefinition } from "./apps-registry";
 import { AppIcon } from "./AppIcon";
 import { StatusBar } from "./StatusBar";
@@ -12,15 +11,11 @@ export function HomeScreen({
 }) {
   return (
     <div className="relative flex h-full w-full flex-col overflow-hidden bg-zinc-950">
-      <Image
-        src="/images/wallpaper.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        priority
-        className="scale-105 object-cover blur-[2px] brightness-[0.45] saturate-125"
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/wallpaper.svg)" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+      <div className="absolute inset-0 bg-black/25" />
 
       <div className="relative flex h-full w-full flex-col">
         <StatusBar />
