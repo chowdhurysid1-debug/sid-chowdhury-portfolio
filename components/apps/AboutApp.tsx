@@ -1,178 +1,255 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  MapPin,
-  Home,
-  GraduationCap,
-  Trophy,
-  Timer,
-  Flag,
-  Fish,
-  Waves,
-  Camera,
-  Car,
-  TrendingUp,
+  Settings as SettingsIconGear,
+  Hourglass,
   Music,
-  Disc3,
-  Headphones,
-  Mic,
-  Film,
   Tv,
   BookOpen,
-  Radio,
   UtensilsCrossed,
-  Sandwich,
-  Ban,
-  Coffee,
-  Moon,
-  Sunrise,
-  Droplets,
-  Dumbbell,
-  Smartphone,
-  LayoutGrid,
-  Backpack,
-  Shirt,
-  BatteryCharging,
-  Glasses,
-  Flame,
-  ThumbsDown,
-  Wrench,
+  HeartPulse,
   Trees,
+  Backpack,
+  MessageSquareQuote,
+  Camera,
+  Car,
+  Wallet,
+  ChevronRight,
+  ChevronLeft,
+  Search,
   type LucideIcon,
 } from "lucide-react";
-import { aboutSections, profile, type SettingsIcon } from "@/data/content";
+import {
+  profile,
+  settingsGroups,
+  type SettingsIcon,
+  type SettingsPage,
+} from "@/data/content";
 
 const icons: Record<SettingsIcon, LucideIcon> = {
-  pin: MapPin,
-  home: Home,
-  school: GraduationCap,
-  football: Trophy,
-  run: Timer,
-  golf: Flag,
-  fish: Fish,
-  waves: Waves,
+  general: SettingsIconGear,
+  screentime: Hourglass,
+  music: Music,
+  tv: Tv,
+  books: BookOpen,
+  food: UtensilsCrossed,
+  health: HeartPulse,
+  outside: Trees,
+  gear: Backpack,
+  opinions: MessageSquareQuote,
   camera: Camera,
   car: Car,
-  chart: TrendingUp,
-  music: Music,
-  album: Disc3,
-  headphones: Headphones,
-  mic: Mic,
-  film: Film,
-  tv: Tv,
-  book: BookOpen,
-  podcast: Radio,
-  food: UtensilsCrossed,
-  sandwich: Sandwich,
-  never: Ban,
-  coffee: Coffee,
-  moon: Moon,
-  sunrise: Sunrise,
-  shower: Droplets,
-  gym: Dumbbell,
-  phone: Smartphone,
-  game: LayoutGrid,
-  bag: Backpack,
-  shirt: Shirt,
-  battery: BatteryCharging,
-  glasses: Glasses,
-  flame: Flame,
-  overrated: ThumbsDown,
-  wrench: Wrench,
-  trees: Trees,
+  wallet: Wallet,
 };
 
-const iconTints: Record<SettingsIcon, string> = {
-  pin: "bg-red-500",
-  home: "bg-orange-500",
-  school: "bg-blue-500",
-  football: "bg-emerald-600",
-  run: "bg-amber-500",
-  golf: "bg-green-600",
-  fish: "bg-sky-500",
-  waves: "bg-cyan-500",
-  camera: "bg-fuchsia-500",
-  car: "bg-zinc-600",
-  chart: "bg-indigo-500",
-  music: "bg-pink-500",
-  album: "bg-purple-500",
-  headphones: "bg-rose-500",
-  mic: "bg-violet-600",
-  film: "bg-violet-500",
-  tv: "bg-indigo-600",
-  book: "bg-teal-600",
-  podcast: "bg-amber-600",
+const tints: Record<SettingsIcon, string> = {
+  general: "bg-zinc-500",
+  screentime: "bg-indigo-500",
+  music: "bg-red-500",
+  tv: "bg-violet-500",
+  books: "bg-orange-500",
   food: "bg-rose-500",
-  sandwich: "bg-orange-600",
-  never: "bg-red-600",
-  coffee: "bg-amber-700",
-  moon: "bg-indigo-700",
-  sunrise: "bg-orange-400",
-  shower: "bg-sky-600",
-  gym: "bg-red-500",
-  phone: "bg-zinc-600",
-  game: "bg-emerald-500",
-  bag: "bg-yellow-700",
-  shirt: "bg-blue-600",
-  battery: "bg-green-600",
-  glasses: "bg-zinc-500",
-  flame: "bg-orange-500",
-  overrated: "bg-red-700",
-  wrench: "bg-slate-600",
-  trees: "bg-green-700",
+  health: "bg-pink-600",
+  outside: "bg-green-600",
+  gear: "bg-amber-600",
+  opinions: "bg-sky-500",
+  camera: "bg-fuchsia-500",
+  car: "bg-blue-600",
+  wallet: "bg-zinc-800",
 };
 
-export function AboutApp() {
+function RowIcon({ icon }: { icon: SettingsIcon }) {
+  const Icon = icons[icon];
   return (
-    <div className="mx-auto max-w-xl px-4 py-6 sm:px-6">
-      <div className="flex items-center gap-4 rounded-2xl bg-zinc-900 p-4">
-        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-white/10">
+    <div
+      className={`flex h-[29px] w-[29px] shrink-0 items-center justify-center rounded-[7px] ${tints[icon]}`}
+    >
+      <Icon className="h-[17px] w-[17px] text-white" strokeWidth={2.2} />
+    </div>
+  );
+}
+
+function SettingsList({ onOpen }: { onOpen: (page: SettingsPage) => void }) {
+  const [query, setQuery] = useState("");
+
+  const groups = settingsGroups
+    .map((group) =>
+      group.filter((page) => {
+        if (!query.trim()) return true;
+        const haystack = [
+          page.label,
+          page.preview,
+          ...page.rows.flatMap((row) => [row.label, row.value]),
+        ]
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(query.trim().toLowerCase());
+      }),
+    )
+    .filter((group) => group.length > 0);
+
+  return (
+    <div className="mx-auto max-w-xl px-4 pt-3 pb-8 sm:px-5">
+      <h1 className="px-1 text-[32px] leading-tight font-bold tracking-tight text-white">
+        Settings
+      </h1>
+
+      <div className="mt-2 flex items-center gap-2 rounded-[10px] bg-zinc-800/80 px-2.5 py-1.5">
+        <Search className="h-4 w-4 shrink-0 text-zinc-500" />
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search"
+          className="w-full bg-transparent text-[15px] text-white placeholder-zinc-500 outline-none"
+        />
+      </div>
+
+      <button
+        type="button"
+        onClick={() => onOpen(settingsGroups[0][0])}
+        className="mt-4 flex w-full cursor-pointer items-center gap-3.5 rounded-xl bg-zinc-900 px-4 py-3 text-left transition-colors duration-150 hover:bg-zinc-800/80"
+      >
+        <div className="relative h-[58px] w-[58px] shrink-0 overflow-hidden rounded-full">
           <Image
             src={profile.headshot}
             alt={profile.name}
             fill
-            sizes="64px"
+            sizes="58px"
             className="object-cover"
             priority
           />
         </div>
-        <div>
-          <p className="text-xl font-semibold text-white">{profile.name}</p>
-          <p className="text-sm text-zinc-400">{profile.location}</p>
+        <div className="min-w-0">
+          <p className="text-[17px] font-medium text-white">{profile.name}</p>
+          <p className="truncate text-[13px] text-zinc-400">
+            USC, Iovine and Young + Marshall
+          </p>
         </div>
-      </div>
+        <ChevronRight className="ml-auto h-4 w-4 shrink-0 text-zinc-600" />
+      </button>
 
-      {aboutSections.map((section) => (
-        <div key={section.title} className="mt-7">
-          <h2 className="mb-2 px-4 text-[13px] font-normal tracking-wide text-zinc-500 uppercase">
-            {section.title}
-          </h2>
-          <div className="overflow-hidden rounded-2xl bg-zinc-900">
-            {section.rows.map((row, i) => {
-              const Icon = icons[row.icon];
-              return (
-                <div
-                  key={row.label}
-                  className={`flex items-center gap-3 px-4 py-2.5 ${
-                    i > 0 ? "border-t border-zinc-800" : ""
-                  }`}
-                >
-                  <div
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-[7px] ${iconTints[row.icon]}`}
-                  >
-                    <Icon className="h-4 w-4 text-white" strokeWidth={2} />
-                  </div>
-                  <span className="text-[15px] text-white">{row.label}</span>
-                  {row.value && (
-                    <span className="ml-auto pl-4 text-right text-[15px] text-zinc-400">
-                      {row.value}
-                    </span>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+      {groups.map((group, gi) => (
+        <div key={gi} className="mt-5 overflow-hidden rounded-xl bg-zinc-900">
+          {group.map((page, i) => (
+            <button
+              key={page.id}
+              type="button"
+              onClick={() => onOpen(page)}
+              className="flex w-full cursor-pointer items-center gap-3 py-1.5 pr-3.5 pl-3.5 text-left transition-colors duration-150 hover:bg-zinc-800/70"
+            >
+              <RowIcon icon={page.icon} />
+              <div
+                className={`flex flex-1 items-center gap-3 py-1.5 ${
+                  i > 0 ? "border-t border-zinc-800" : ""
+                }`}
+                style={i > 0 ? { marginTop: "-1px" } : undefined}
+              >
+                <span className="text-[16px] text-white">{page.label}</span>
+                <span className="ml-auto truncate pl-3 text-[15px] text-zinc-500">
+                  {page.preview}
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-zinc-600" />
+              </div>
+            </button>
+          ))}
         </div>
       ))}
+
+      {groups.length === 0 && (
+        <p className="mt-10 text-center text-sm text-zinc-500">
+          Nothing matches &ldquo;{query}&rdquo;.
+        </p>
+      )}
+    </div>
+  );
+}
+
+function SettingsDetail({
+  page,
+  onBack,
+}: {
+  page: SettingsPage;
+  onBack: () => void;
+}) {
+  return (
+    <div className="mx-auto max-w-xl px-4 pt-3 pb-8 sm:px-5">
+      <button
+        type="button"
+        onClick={onBack}
+        className="flex cursor-pointer items-center gap-0.5 text-[17px] text-indigo-400 transition-colors duration-150 hover:text-indigo-300"
+      >
+        <ChevronLeft className="h-5 w-5" />
+        Settings
+      </button>
+
+      <div className="mt-3 flex items-center gap-3 px-1">
+        <RowIcon icon={page.icon} />
+        <h1 className="text-[28px] leading-tight font-bold tracking-tight text-white">
+          {page.label}
+        </h1>
+      </div>
+
+      <div className="mt-4 overflow-hidden rounded-xl bg-zinc-900">
+        {page.rows.map((row, i) => (
+          <div key={row.label} className="px-3.5">
+            <div
+              className={`flex items-start gap-3 py-2.5 ${
+                i > 0 ? "border-t border-zinc-800" : ""
+              }`}
+            >
+              <span className="shrink-0 text-[16px] text-white">
+                {row.label}
+              </span>
+              <span className="ml-auto text-right text-[15px] text-zinc-400">
+                {row.value}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {page.footer && (
+        <p className="mt-2 px-4 text-[13px] leading-relaxed text-zinc-500">
+          {page.footer}
+        </p>
+      )}
+    </div>
+  );
+}
+
+export function AboutApp() {
+  const [page, setPage] = useState<SettingsPage | null>(null);
+
+  return (
+    <div className="relative h-full">
+      <AnimatePresence mode="wait" initial={false}>
+        {page ? (
+          <motion.div
+            key={page.id}
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 400, damping: 40 }}
+            className="absolute inset-0 overflow-y-auto bg-black"
+          >
+            <SettingsDetail page={page} onBack={() => setPage(null)} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="list"
+            initial={{ x: "-25%", opacity: 0.6 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-25%", opacity: 0.6 }}
+            transition={{ type: "spring", stiffness: 400, damping: 40 }}
+            className="absolute inset-0 overflow-y-auto bg-black"
+          >
+            <SettingsList onOpen={setPage} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

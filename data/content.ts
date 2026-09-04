@@ -21,206 +21,186 @@ export const profile = {
   headshot: "/images/headshot.png",
 };
 
-// The About app renders as an iPhone Settings screen: grouped rows, each with
-// an icon, a label, and a value. Add rows here and they show up in the UI.
-export type SettingsRow = {
-  icon: SettingsIcon;
+// The About app is a replica of the iPhone Settings app. Each entry below is
+// one row on the main Settings list; tapping it pushes a detail screen made of
+// the label/value rows in `rows`. `preview` is the gray text on the right of
+// the main row, the way Settings shows the current Wi-Fi network.
+export type SettingsIcon =
+  | "general"
+  | "screentime"
+  | "music"
+  | "tv"
+  | "books"
+  | "food"
+  | "health"
+  | "outside"
+  | "gear"
+  | "opinions"
+  | "camera"
+  | "car"
+  | "wallet";
+
+export type DetailRow = {
   label: string;
   value: string;
 };
 
-export type SettingsIcon =
-  | "pin"
-  | "home"
-  | "school"
-  | "football"
-  | "run"
-  | "golf"
-  | "fish"
-  | "waves"
-  | "camera"
-  | "car"
-  | "chart"
-  | "music"
-  | "album"
-  | "headphones"
-  | "mic"
-  | "film"
-  | "tv"
-  | "book"
-  | "podcast"
-  | "food"
-  | "sandwich"
-  | "never"
-  | "coffee"
-  | "moon"
-  | "sunrise"
-  | "shower"
-  | "gym"
-  | "phone"
-  | "game"
-  | "bag"
-  | "shirt"
-  | "battery"
-  | "glasses"
-  | "flame"
-  | "overrated"
-  | "wrench"
-  | "trees";
-
-export type SettingsSection = {
-  title: string;
-  rows: SettingsRow[];
+export type SettingsPage = {
+  id: string;
+  label: string;
+  icon: SettingsIcon;
+  preview: string;
+  rows: DetailRow[];
+  footer?: string;
 };
 
-export const aboutSections: SettingsSection[] = [
-  {
-    title: "Basics",
-    rows: [
-      { icon: "pin", label: "Currently", value: "Los Angeles, CA" },
-      {
-        icon: "home",
-        label: "Hometown",
-        value: "Eden Prairie, MN, by way of Dubai",
-      },
-      {
-        icon: "school",
-        label: "School",
-        value: "USC, Iovine and Young + Marshall",
-      },
-    ],
-  },
-  {
-    title: "Listening",
-    rows: [
-      { icon: "music", label: "Artist", value: "Chris Stapleton" },
-      { icon: "headphones", label: "On repeat", value: "Love Songs, Prospa" },
-      {
-        icon: "album",
-        label: "Albums",
-        value: "Thriller, Octane, Open This Wall",
-      },
-      { icon: "flame", label: "Guilty pleasure", value: "Ella Langley" },
-      { icon: "mic", label: "Best show", value: "Bruno Mars" },
-    ],
-  },
-  {
-    title: "Watching and reading",
-    rows: [
-      { icon: "film", label: "Movie", value: "Dead Poets Society" },
-      { icon: "tv", label: "Rewatch", value: "Suits" },
-      { icon: "book", label: "Reading", value: "The Visual MBA" },
-      {
-        icon: "podcast",
-        label: "In my ears",
-        value: "Goldman Sachs Exchanges",
-      },
-    ],
-  },
-  {
-    title: "Eating",
-    rows: [
-      { icon: "food", label: "Best meal", value: "Howlin' Ray's chicken" },
-      { icon: "sandwich", label: "First order", value: "Chicken sandwich" },
-      { icon: "never", label: "Never", value: "Pickles" },
-      {
-        icon: "coffee",
-        label: "Coffee",
-        value: "Iced vanilla latte, or a strawberry acai refresher",
-      },
-      { icon: "moon", label: "2am in LA", value: "Taco Bell" },
-    ],
-  },
-  {
-    title: "A normal day",
-    rows: [
-      { icon: "sunrise", label: "Up at", value: "8:30 am" },
-      { icon: "shower", label: "First move", value: "Shower" },
-      {
-        icon: "gym",
-        label: "Training",
-        value: "Push, pull, legs, rest, upper, lower, rest",
-      },
-      { icon: "phone", label: "Screen time", value: "4h30m, mostly Instagram" },
-      { icon: "game", label: "Every single day", value: "Wordle" },
-      {
-        icon: "bag",
-        label: "In the bag",
-        value: "Laptop, iPad, notebook, Apple Pencil, Mambas",
-      },
-    ],
-  },
-  {
-    title: "Outside",
-    rows: [
-      {
-        icon: "football",
-        label: "Football",
-        value: "Four years varsity under Coach Mike Grant",
-      },
-      {
-        icon: "run",
-        label: "Track",
-        value: "Top-10 all-time freshman 200m at EPHS",
-      },
-      { icon: "fish", label: "Biggest fish", value: "37-inch muskie" },
-      {
-        icon: "waves",
-        label: "Wakeboarding",
-        value: "Over snowboarding. Hurts less",
-      },
-      { icon: "golf", label: "Golf", value: "" },
-      { icon: "camera", label: "Photography", value: "" },
-    ],
-  },
-  {
-    title: "Gear",
-    rows: [
-      {
-        icon: "shirt",
-        label: "Uniform",
-        value: "America surfing team cutoff",
-      },
-      {
-        icon: "battery",
-        label: "Best buy under $100",
-        value: "Ugreen power bank",
-      },
-      {
-        icon: "glasses",
-        label: "Worst buy",
-        value: "Even Realities G1 glasses",
-      },
-      { icon: "car", label: "Dream car", value: "Ram TRX" },
-      { icon: "car", label: "Realistic car", value: "2020 BMW X5" },
-    ],
-  },
-  {
-    title: "Opinions",
-    rows: [
-      {
-        icon: "football",
-        label: "Hot take",
-        value: "The Seahawks are always Super Bowl contenders",
-      },
-      {
-        icon: "overrated",
-        label: "Most overrated in finance",
-        value: "Patagonia vests",
-      },
-      { icon: "never", label: "Worst advice", value: '"Play it safe"' },
-      {
-        icon: "wrench",
-        label: "Everyone should know",
-        value: "How to fix a flat tire",
-      },
-      {
-        icon: "trees",
-        label: "On Minnesota",
-        value: "Most beautiful place in the country in the summer",
-      },
-    ],
-  },
+// Each inner array is one visually grouped block, the way Settings separates
+// General / Screen Time from the app-specific rows below it.
+export const settingsGroups: SettingsPage[][] = [
+  [
+    {
+      id: "general",
+      label: "General",
+      icon: "general",
+      preview: "Los Angeles",
+      rows: [
+        { label: "Currently", value: "Los Angeles, CA" },
+        { label: "Hometown", value: "Eden Prairie, MN, by way of Dubai" },
+        { label: "School", value: "USC, Iovine and Young + Marshall" },
+        { label: "Studying", value: "Business of Innovation" },
+      ],
+    },
+    {
+      id: "screentime",
+      label: "Screen Time",
+      icon: "screentime",
+      preview: "4h 30m",
+      rows: [
+        { label: "Daily average", value: "4h 30m" },
+        { label: "Most used", value: "Instagram" },
+        { label: "Up at", value: "8:30 am" },
+        { label: "First move", value: "Shower" },
+        { label: "Every single day", value: "Wordle" },
+      ],
+    },
+  ],
+  [
+    {
+      id: "music",
+      label: "Music",
+      icon: "music",
+      preview: "Chris Stapleton",
+      rows: [
+        { label: "Favorite artist", value: "Chris Stapleton" },
+        { label: "On repeat", value: "Love Songs, Prospa" },
+        { label: "Albums", value: "Thriller, Octane, Open This Wall" },
+        { label: "Guilty pleasure", value: "Ella Langley" },
+        { label: "Best show", value: "Bruno Mars" },
+      ],
+    },
+    {
+      id: "tv",
+      label: "TV & Movies",
+      icon: "tv",
+      preview: "Suits",
+      rows: [
+        { label: "Favorite movie", value: "Dead Poets Society" },
+        { label: "Rewatched most", value: "Suits" },
+        { label: "Last real laugh", value: "Standup comedy" },
+      ],
+    },
+    {
+      id: "books",
+      label: "Books & Podcasts",
+      icon: "books",
+      preview: "The Visual MBA",
+      rows: [
+        { label: "Reading", value: "The Visual MBA" },
+        { label: "In my ears", value: "Goldman Sachs Exchanges" },
+      ],
+    },
+  ],
+  [
+    {
+      id: "food",
+      label: "Food",
+      icon: "food",
+      preview: "Howlin' Ray's",
+      rows: [
+        { label: "Best meal", value: "Howlin' Ray's chicken" },
+        { label: "First order anywhere", value: "Chicken sandwich" },
+        { label: "Never", value: "Pickles" },
+        {
+          label: "Coffee",
+          value: "Iced vanilla latte, or a strawberry acai refresher",
+        },
+        { label: "2am in LA", value: "Taco Bell" },
+      ],
+    },
+    {
+      id: "health",
+      label: "Health",
+      icon: "health",
+      preview: "Push, pull, legs",
+      rows: [
+        { label: "Split", value: "Push, pull, legs, rest, upper, lower, rest" },
+      ],
+    },
+    {
+      id: "outside",
+      label: "Outside",
+      icon: "outside",
+      preview: "Wakeboarding",
+      rows: [
+        {
+          label: "Football",
+          value: "Four years varsity under Coach Mike Grant",
+        },
+        { label: "Track", value: "Top-10 all-time freshman 200m at EPHS" },
+        { label: "Biggest fish", value: "37-inch muskie" },
+        { label: "Wakeboard or snowboard", value: "Wakeboard. Hurts less" },
+        { label: "Also", value: "Golf, photography" },
+      ],
+    },
+  ],
+  [
+    {
+      id: "gear",
+      label: "Gear",
+      icon: "gear",
+      preview: "Ram TRX",
+      rows: [
+        { label: "Uniform", value: "America surfing team cutoff" },
+        {
+          label: "In the bag",
+          value: "Laptop, iPad, notebook, Apple Pencil, Mambas",
+        },
+        { label: "Best buy under $100", value: "Ugreen power bank" },
+        { label: "Worst buy", value: "Even Realities G1 glasses" },
+        { label: "Dream car", value: "Ram TRX" },
+        { label: "Realistic car", value: "2020 BMW X5" },
+      ],
+    },
+    {
+      id: "opinions",
+      label: "Opinions",
+      icon: "opinions",
+      preview: "Seahawks",
+      rows: [
+        {
+          label: "Hot take",
+          value: "The Seahawks are always Super Bowl contenders",
+        },
+        { label: "Most overrated in finance", value: "Patagonia vests" },
+        { label: "Worst advice", value: '"Play it safe"' },
+        { label: "Everyone should know", value: "How to fix a flat tire" },
+        {
+          label: "On Minnesota",
+          value: "Most beautiful place in the country in the summer",
+        },
+      ],
+    },
+  ],
 ];
 
 // ---------------------------------------------------------------------------

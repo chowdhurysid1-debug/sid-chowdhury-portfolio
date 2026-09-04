@@ -8,7 +8,7 @@ import {
 } from "ai";
 import { z } from "zod";
 import {
-  aboutSections,
+  settingsGroups,
   academicProjects,
   education,
   experience,
@@ -26,7 +26,7 @@ const requestSchema = z.object({
 function buildSystemPrompt() {
   const facts = {
     profile,
-    about: aboutSections,
+    about: settingsGroups,
     founding,
     experience,
     academicProjects,
