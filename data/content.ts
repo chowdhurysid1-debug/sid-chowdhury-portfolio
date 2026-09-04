@@ -681,9 +681,9 @@ export const ventures: Venture[] = [
     hook: "Money that actually shows up, for founders too young to sign for it.",
     tagline: "Minors can't sign contracts. That was the whole problem.",
     body: [
-      "A sixteen-year-old with a real idea cannot open a business bank account or sign anything. Most programs for young founders skip past that part and hand out a trophy instead. I wanted the money to be actual money.",
-      "So we ran it through the school foundation. Real paperwork, real account, grants that land in a real bank. Kids pitch quarterly, and nobody gets funded for a good idea. They get funded for proving somebody already wants the thing.",
-      "The part nobody warns you about is that writing the check is the easy half. All three still call. Most of what I do now is argue about pricing and tell founders the thing they were hoping I would not say.",
+      "A sixteen-year-old with a real idea can't open a bank account or sign anything. Most programs for kids skip that part and hand out a trophy. I wanted the money to be actual money.",
+      "So we ran it through the school foundation. Real paperwork, real account, grants that land in a real bank. Kids pitch every quarter, and nobody gets funded for having a good idea. You get funded for proving somebody already wants it.",
+      "Writing the check turned out to be the easy half. All three still call. Most of what I do now is argue about pricing and tell people the thing they were hoping I wouldn't say.",
     ],
     highlights: [
       { value: "22", label: "Screened" },
@@ -716,12 +716,12 @@ export const ventures: Venture[] = [
     role: "Co-Founder",
     dates: "May 2024 - Aug 2026",
     location: "Minneapolis, MN",
-    hook: "Twenty kids turned into 360, and the district's numbers moved.",
+    hook: "Started with twenty kids and no curriculum. Ended with 360.",
     tagline: "Where little fins make big waves.",
     body: [
       "We started with twenty kids and no curriculum, so I wrote the curriculum.",
-      "Eight workshops, third through eighth grade, ending in a Shark Tank where the judges are actual investors and Chamber people rather than teachers being polite. Watching a fourth grader take a real question from a real investor is the entire point of it.",
-      "The number I care about is not even ours. Business class enrollment at the high school went up 42%. The kids we taught got older and signed up on their own.",
+      "Eight workshops, third through eighth grade, ending in a Shark Tank where the judges are real investors and Chamber people, not teachers being nice. A fourth grader taking a real question from a real investor is the whole point.",
+      "The number I care about isn't even ours. Business class enrollment at the high school went up 42%. The kids we taught got older and signed up on their own.",
     ],
     highlights: [
       { value: "20 to 360+", label: "Students" },
@@ -739,9 +739,9 @@ export const ventures: Venture[] = [
     hook: "Lost the first one badly. Fixed it with a notebook.",
     tagline: "Lost the first one. Wrote the book after.",
     body: [
-      "I lost my first competition. It was not close.",
-      "So I wrote down every performance indicator they could possibly test, all in one place, and kept adding to it until it stopped being my notebook and became the thing the whole chapter studied from.",
-      "Third in the world the next year. But the part I would actually put on a wall is the eighty people I trained going from a 64 average to 85 and up, and thirty-two of them making state, double what we sent the year before.",
+      "I lost my first competition. It wasn't close.",
+      "So I wrote down every performance indicator they could possibly test, put it in one place, and kept adding until it wasn't my notebook anymore. It was what the whole chapter studied from.",
+      "Third in the world the next year. But the part I'd actually put on a wall is the eighty people I trained going from a 64 average to 85 and up, and thirty-two making state. Double what we sent the year before.",
     ],
     highlights: [
       { value: "3rd", label: "Globally, 2025" },

@@ -12,7 +12,7 @@ function VentureList({ onOpen }: { onOpen: (venture: Venture) => void }) {
         Things I built
       </h1>
       <p className="mt-1 text-sm text-zinc-500">
-        Three of them. Open one for the whole story.
+        Tap one.
       </p>
 
       <div className="mt-6">
