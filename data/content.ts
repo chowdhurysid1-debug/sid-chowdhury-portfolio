@@ -40,14 +40,33 @@ export type SettingsIcon =
   | "waves"
   | "camera"
   | "car"
-  | "watch"
   | "chart"
   | "music"
+  | "album"
+  | "headphones"
+  | "mic"
   | "film"
+  | "tv"
   | "book"
+  | "podcast"
   | "food"
-  | "heart"
-  | "star";
+  | "sandwich"
+  | "never"
+  | "coffee"
+  | "moon"
+  | "sunrise"
+  | "shower"
+  | "gym"
+  | "phone"
+  | "game"
+  | "bag"
+  | "shirt"
+  | "battery"
+  | "glasses"
+  | "flame"
+  | "overrated"
+  | "wrench"
+  | "trees";
 
 export type SettingsSection = {
   title: string;
@@ -72,7 +91,67 @@ export const aboutSections: SettingsSection[] = [
     ],
   },
   {
-    title: "Also true",
+    title: "Listening",
+    rows: [
+      { icon: "music", label: "Artist", value: "Chris Stapleton" },
+      { icon: "headphones", label: "On repeat", value: "Love Songs, Prospa" },
+      {
+        icon: "album",
+        label: "Albums",
+        value: "Thriller, Octane, Open This Wall",
+      },
+      { icon: "flame", label: "Guilty pleasure", value: "Ella Langley" },
+      { icon: "mic", label: "Best show", value: "Bruno Mars" },
+    ],
+  },
+  {
+    title: "Watching and reading",
+    rows: [
+      { icon: "film", label: "Movie", value: "Dead Poets Society" },
+      { icon: "tv", label: "Rewatch", value: "Suits" },
+      { icon: "book", label: "Reading", value: "The Visual MBA" },
+      {
+        icon: "podcast",
+        label: "In my ears",
+        value: "Goldman Sachs Exchanges",
+      },
+    ],
+  },
+  {
+    title: "Eating",
+    rows: [
+      { icon: "food", label: "Best meal", value: "Howlin' Ray's chicken" },
+      { icon: "sandwich", label: "First order", value: "Chicken sandwich" },
+      { icon: "never", label: "Never", value: "Pickles" },
+      {
+        icon: "coffee",
+        label: "Coffee",
+        value: "Iced vanilla latte, or a strawberry acai refresher",
+      },
+      { icon: "moon", label: "2am in LA", value: "Taco Bell" },
+    ],
+  },
+  {
+    title: "A normal day",
+    rows: [
+      { icon: "sunrise", label: "Up at", value: "8:30 am" },
+      { icon: "shower", label: "First move", value: "Shower" },
+      {
+        icon: "gym",
+        label: "Training",
+        value: "Push, pull, legs, rest, upper, lower, rest",
+      },
+      { icon: "phone", label: "Screen time", value: "4h30m, mostly Instagram" },
+      { icon: "game", label: "Every single day", value: "Wordle" },
+      {
+        icon: "bag",
+        label: "In the bag",
+        value: "Laptop, iPad, notebook, Apple Pencil, Mambas",
+      },
+    ],
+  },
+  {
+    title: "Outside",
     rows: [
       {
         icon: "football",
@@ -84,19 +163,62 @@ export const aboutSections: SettingsSection[] = [
         label: "Track",
         value: "Top-10 all-time freshman 200m at EPHS",
       },
+      { icon: "fish", label: "Biggest fish", value: "37-inch muskie" },
+      {
+        icon: "waves",
+        label: "Wakeboarding",
+        value: "Over snowboarding. Hurts less",
+      },
+      { icon: "golf", label: "Golf", value: "" },
+      { icon: "camera", label: "Photography", value: "" },
     ],
   },
   {
-    title: "Into it",
+    title: "Gear",
     rows: [
-      { icon: "golf", label: "Golf", value: "" },
-      { icon: "fish", label: "Fishing", value: "" },
-      { icon: "waves", label: "Wakeboarding", value: "" },
-      { icon: "camera", label: "Photography", value: "" },
-      { icon: "car", label: "Cars", value: "" },
-      { icon: "watch", label: "Watches", value: "" },
-      { icon: "chart", label: "Markets", value: "" },
-      { icon: "football", label: "Seahawks", value: "" },
+      {
+        icon: "shirt",
+        label: "Uniform",
+        value: "America surfing team cutoff",
+      },
+      {
+        icon: "battery",
+        label: "Best buy under $100",
+        value: "Ugreen power bank",
+      },
+      {
+        icon: "glasses",
+        label: "Worst buy",
+        value: "Even Realities G1 glasses",
+      },
+      { icon: "car", label: "Dream car", value: "Ram TRX" },
+      { icon: "car", label: "Realistic car", value: "2020 BMW X5" },
+    ],
+  },
+  {
+    title: "Opinions",
+    rows: [
+      {
+        icon: "football",
+        label: "Hot take",
+        value: "The Seahawks are always Super Bowl contenders",
+      },
+      {
+        icon: "overrated",
+        label: "Most overrated in finance",
+        value: "Patagonia vests",
+      },
+      { icon: "never", label: "Worst advice", value: '"Play it safe"' },
+      {
+        icon: "wrench",
+        label: "Everyone should know",
+        value: "How to fix a flat tire",
+      },
+      {
+        icon: "trees",
+        label: "On Minnesota",
+        value: "Most beautiful place in the country in the summer",
+      },
     ],
   },
 ];
