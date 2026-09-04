@@ -1,4 +1,13 @@
-import { User, Images, Mail, Sparkles, FileText } from "lucide-react";
+import {
+  User,
+  Images,
+  Mail,
+  Sparkles,
+  FileText,
+  Clapperboard,
+  AudioLines,
+  Anchor,
+} from "lucide-react";
 import type { ComponentType } from "react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
@@ -46,6 +55,27 @@ export const apps: AppDefinition[] = [
     gradient: "from-violet-500 to-purple-700",
     kind: "internal",
     inDock: true,
+  },
+  {
+    id: "cinema",
+    label: "Letterboxd",
+    icon: Clapperboard,
+    gradient: "from-[#00e054] to-emerald-700",
+    kind: "internal",
+  },
+  {
+    id: "listening",
+    label: "Spotify",
+    icon: AudioLines,
+    gradient: "from-[#1db954] to-green-800",
+    kind: "internal",
+  },
+  {
+    id: "garage",
+    label: "Garage",
+    icon: Anchor,
+    gradient: "from-sky-500 to-blue-800",
+    kind: "internal",
   },
   {
     id: "resume",

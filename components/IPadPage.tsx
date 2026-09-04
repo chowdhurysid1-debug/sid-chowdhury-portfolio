@@ -11,12 +11,18 @@ import { AboutApp } from "@/components/apps/AboutApp";
 import { PhotosApp } from "@/components/apps/PhotosApp";
 import { ContactApp } from "@/components/apps/ContactApp";
 import { AskSidApp } from "@/components/apps/AskSidApp";
+import { CinemaApp } from "@/components/apps/CinemaApp";
+import { ListeningApp } from "@/components/apps/ListeningApp";
+import { GarageApp } from "@/components/apps/GarageApp";
 
 const appComponents: Record<string, ComponentType> = {
   about: AboutApp,
   photos: PhotosApp,
   mail: ContactApp,
   asksid: AskSidApp,
+  cinema: CinemaApp,
+  listening: ListeningApp,
+  garage: GarageApp,
 };
 
 export function IPadPage() {

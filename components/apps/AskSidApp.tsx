@@ -3,14 +3,17 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useState } from "react";
-import { Sparkles, Send } from "lucide-react";
+import Image from "next/image";
+import { ArrowUp } from "lucide-react";
 import { profile } from "@/data/content";
 
 const suggestions = [
   "What is EP Venture Fund?",
-  "Where has Sid interned?",
-  "What is Sid studying at USC?",
-  "How do I get in touch with Sid?",
+  "Where has he interned?",
+  "What is he listening to?",
+  "What does he do for fun?",
+  "What are his goals?",
+  "How do I contact him?",
 ];
 
 export function AskSidApp() {
@@ -29,25 +32,51 @@ export function AskSidApp() {
   }
 
   return (
-    <div className="flex h-full flex-col">
-      <div className="flex-1 overflow-y-auto px-6 py-6 sm:px-10">
+    <div className="flex h-full flex-col bg-black">
+      <div className="flex items-center gap-2.5 border-b border-zinc-900 px-5 py-2.5">
+        <div className="relative h-7 w-7 overflow-hidden rounded-full">
+          <Image
+            src={profile.headshot}
+            alt=""
+            fill
+            sizes="28px"
+            className="object-cover"
+          />
+        </div>
+        <span className="text-[15px] font-medium text-white">Ask Sid</span>
+        <span className="rounded-md border border-zinc-800 bg-zinc-900 px-1.5 py-0.5 text-[11px] font-medium text-zinc-400">
+          Sonnet
+        </span>
+      </div>
+
+      <div className="flex-1 overflow-y-auto px-5 py-6">
         {messages.length === 0 ? (
-          <div className="mx-auto flex max-w-md flex-col items-center pt-10 text-center">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-purple-700 shadow-lg">
-              <Sparkles className="h-7 w-7 text-white" strokeWidth={1.75} />
+          <div className="mx-auto flex max-w-lg flex-col items-center pt-8 text-center">
+            <div className="relative h-16 w-16 overflow-hidden rounded-full border border-white/10">
+              <Image
+                src={profile.headshot}
+                alt={profile.name}
+                fill
+                sizes="64px"
+                className="object-cover"
+                priority
+              />
             </div>
-            <h1 className="mt-4 text-xl font-semibold text-white">Ask Sid</h1>
+            <h1 className="mt-4 text-xl font-semibold text-white">
+              What do you want to know about Sid?
+            </h1>
             <p className="mt-1.5 text-sm text-zinc-400">
-              Ask about {profile.name.split(" ")[0]}&rsquo;s work, school, or
-              background. Answers come straight from his own resume.
+              Ask about his ventures, school, taste, or what he does for fun.
+              Answers come from his own words.
             </p>
-            <div className="mt-6 flex w-full flex-col gap-2">
+
+            <div className="mt-7 grid w-full gap-2 sm:grid-cols-2">
               {suggestions.map((s) => (
                 <button
                   key={s}
                   type="button"
                   onClick={() => submit(s)}
-                  className="cursor-pointer rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-left text-sm text-zinc-300 transition-all duration-200 hover:border-zinc-700 hover:text-white"
+                  className="cursor-pointer rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-2.5 text-left text-sm text-zinc-300 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
                 >
                   {s}
                 </button>
@@ -55,18 +84,29 @@ export function AskSidApp() {
             </div>
           </div>
         ) : (
-          <div className="mx-auto flex max-w-xl flex-col gap-4">
+          <div className="mx-auto flex max-w-2xl flex-col gap-5">
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex ${message.role === "user" ? "justify-end" : "gap-3"}`}
               >
+                {message.role !== "user" && (
+                  <div className="relative mt-0.5 h-7 w-7 shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src={profile.headshot}
+                      alt=""
+                      fill
+                      sizes="28px"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                  className={
                     message.role === "user"
-                      ? "bg-indigo-600 text-white"
-                      : "border border-zinc-800 bg-zinc-900 text-zinc-200"
-                  }`}
+                      ? "max-w-[80%] rounded-2xl bg-zinc-800 px-4 py-2.5 text-sm leading-relaxed text-white"
+                      : "max-w-[85%] text-sm leading-relaxed text-zinc-200"
+                  }
                 >
                   {message.parts.map((part, i) =>
                     part.type === "text" ? (
@@ -79,11 +119,20 @@ export function AskSidApp() {
               </div>
             ))}
             {status === "submitted" && (
-              <div className="flex justify-start">
-                <div className="flex items-center gap-1 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-3">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-zinc-500" />
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-zinc-500 [animation-delay:150ms]" />
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-zinc-500 [animation-delay:300ms]" />
+              <div className="flex gap-3">
+                <div className="relative mt-0.5 h-7 w-7 shrink-0 overflow-hidden rounded-full">
+                  <Image
+                    src={profile.headshot}
+                    alt=""
+                    fill
+                    sizes="28px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex items-center gap-1 pt-2">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-zinc-600" />
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-zinc-600 [animation-delay:150ms]" />
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-zinc-600 [animation-delay:300ms]" />
                 </div>
               </div>
             )}
@@ -96,22 +145,22 @@ export function AskSidApp() {
           e.preventDefault();
           submit(input);
         }}
-        className="border-t border-white/10 bg-zinc-950/95 px-4 py-3 sm:px-8"
+        className="px-4 pb-4 sm:px-6"
       >
-        <div className="mx-auto flex max-w-xl items-center gap-2">
+        <div className="mx-auto flex max-w-2xl items-center gap-2 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-2">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about Sid's work, school, or background"
+            placeholder="Message Ask Sid..."
             disabled={isBusy}
-            className="w-full flex-1 rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-2.5 text-sm text-white placeholder-zinc-500 transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-indigo-500 focus:outline-none disabled:opacity-60"
+            className="w-full flex-1 bg-transparent py-1.5 text-sm text-white placeholder-zinc-500 outline-none disabled:opacity-60"
           />
           <button
             type="submit"
             disabled={isBusy || !input.trim()}
-            className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl bg-indigo-600 text-white transition-all duration-200 hover:bg-indigo-500 active:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full bg-white text-black transition-all duration-200 hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-30"
           >
-            <Send className="h-4 w-4" />
+            <ArrowUp className="h-4 w-4" strokeWidth={2.5} />
           </button>
         </div>
       </form>

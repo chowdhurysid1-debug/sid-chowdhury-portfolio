@@ -320,3 +320,137 @@ export const skills = {
     "Technical analysis (Bollinger Bands, RSI, Fibonacci retracements)",
   ],
 };
+
+// ---------------------------------------------------------------------------
+// Letterboxd, Spotify, and Garage apps.
+// Anything with an empty string is waiting on a real answer from Sid and the
+// UI hides it rather than showing a made-up value.
+// ---------------------------------------------------------------------------
+
+export type Film = {
+  title: string;
+  rating: number;
+  note?: string;
+};
+
+export const cinema = {
+  stats: [
+    { label: "Films", value: "147" },
+    { label: "This year", value: "38" },
+    { label: "Lists", value: "6" },
+  ],
+  favorites: [
+    { title: "The Social Network", rating: 5 },
+    { title: "Interstellar", rating: 5 },
+    { title: "The Wolf of Wall Street", rating: 4.5 },
+    { title: "Ford v Ferrari", rating: 4.5 },
+  ] as Film[],
+  recent: [
+    {
+      title: "Moneyball",
+      rating: 4.5,
+      note: "Somehow made on-base percentage cinematic.",
+    },
+    { title: "The Big Short", rating: 4.5 },
+    { title: "Whiplash", rating: 5 },
+    { title: "The Hangover", rating: 4 },
+  ] as Film[],
+  lists: [
+    "Movies that make me want to build something",
+    "Perfect plane movies",
+    "Movies I will defend way too aggressively",
+    "Actually worth the 2.5+ hour runtime",
+  ],
+};
+
+export type Playlist = {
+  name: string;
+  description: string;
+  gradient: string;
+};
+
+export const listening = {
+  year: "2026",
+  topArtists: [
+    "Chris Stapleton",
+    "Prospa",
+    "Ella Langley",
+    "Bruno Mars",
+    "Michael Jackson",
+  ],
+  minutes: "",
+  topGenre: "",
+  spotifyUrl: "",
+  playlists: [
+    {
+      name: "Windows Down",
+      description: "Songs for driving around LA.",
+      gradient: "from-orange-500 to-red-600",
+    },
+    {
+      name: "Boat Aux",
+      description: "What gets played on the Malibu.",
+      gradient: "from-sky-500 to-blue-700",
+    },
+    {
+      name: "1:37 AM",
+      description: "What plays while building something.",
+      gradient: "from-violet-600 to-indigo-800",
+    },
+  ] as Playlist[],
+  funStat: "Most dangerous privilege: being handed the aux.",
+};
+
+export type LogEntry = {
+  problem: string;
+  status: "SOLVED" | "UPGRADED";
+  detail: string;
+};
+
+export const garage = {
+  vessel: "2009 Malibu Wakesetter VLX",
+  status: "Running (for now)",
+  hoursAdded: "60+",
+  relationship: "Complicated",
+  log: [
+    {
+      problem: "Starter won't crank",
+      status: "SOLVED",
+      detail: "Battery, then relay, then starter. Diagnosed in that order.",
+    },
+    {
+      problem: "Starboard ballast won't drain",
+      status: "SOLVED",
+      detail: "",
+    },
+    {
+      problem: "Anchor won't hold",
+      status: "SOLVED",
+      detail: "Mud and rock need completely different setups.",
+    },
+    {
+      problem: "Bluetooth and audio",
+      status: "UPGRADED",
+      detail: "Installed a Fusion head unit.",
+    },
+  ] as LogEntry[],
+  lessons: [
+    {
+      number: "01",
+      title: "Diagnose before replacing",
+      body: "The obvious broken part isn't always the broken part.",
+    },
+    {
+      number: "02",
+      title: "Learn the system",
+      body: "Knowing why something works beats knowing which button fixes it.",
+    },
+    {
+      number: "03",
+      title: "Ask stupid questions",
+      body: "Half of troubleshooting is testing the thing that obviously isn't the problem.",
+    },
+  ],
+  rabbitHole:
+    "Figuring out exactly how much bilge-pump capacity a 21-foot boat actually needs.",
+};
