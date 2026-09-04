@@ -10,7 +10,13 @@ import {
 import { ChevronUp } from "lucide-react";
 import { profile } from "@/data/content";
 
-export function LockScreen({ onUnlock }: { onUnlock: () => void }) {
+export function LockScreen({
+  onUnlock,
+  wallpaper,
+}: {
+  onUnlock: () => void;
+  wallpaper: string;
+}) {
   const [now, setNow] = useState<Date | null>(null);
   const dragY = useMotionValue(0);
   const opacity = useTransform(dragY, [0, -140], [1, 0]);
@@ -35,7 +41,7 @@ export function LockScreen({ onUnlock }: { onUnlock: () => void }) {
     >
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/wallpaper.svg)" }}
+        style={{ backgroundImage: wallpaper }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
 

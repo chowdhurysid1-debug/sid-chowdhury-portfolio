@@ -6,14 +6,16 @@ import { StatusBar } from "./StatusBar";
 
 export function HomeScreen({
   onOpenApp,
+  wallpaper,
 }: {
   onOpenApp: (app: AppDefinition) => void;
+  wallpaper: string;
 }) {
   return (
     <div className="relative flex h-full w-full flex-col overflow-hidden bg-zinc-950">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/wallpaper.svg)" }}
+        style={{ backgroundImage: wallpaper }}
       />
       <div className="absolute inset-0 bg-black/25" />
 
