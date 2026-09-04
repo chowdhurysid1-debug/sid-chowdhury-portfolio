@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sid Chowdhury: Personal Portfolio
 
-## Getting Started
+A personal portfolio site built as an interactive iPad simulator: lock screen, home
+screen, dock, and a set of apps covering work, education, organizations, mentors,
+photos, and a way to reach out.
 
-First, run the development server:
+## Apps
+
+| App               | What it shows                                                            |
+| ----------------- | ------------------------------------------------------------------------ |
+| About             | Bio, quick facts, interests, languages                                   |
+| Work              | Founding & leadership, internships, academic research                    |
+| Education         | USC (Marshall + Iovine and Young Academy) and Eden Prairie High School   |
+| Organizations     | EP Venture Fund, Junior Sharks, DECA                                     |
+| Photos            | Photography                                                              |
+| Mentors           | People who shaped the work above                                         |
+| Mail              | Direct ways to get in touch                                              |
+| Ask Sid           | An AI assistant that answers questions using only the facts on this site |
+| Resume            | Opens the PDF resume                                                     |
+| GitHub / LinkedIn | External links, open in a new tab                                        |
+
+## Tech stack
+
+| Layer      | Technology                         |
+| ---------- | ---------------------------------- |
+| Framework  | Next.js (App Router, Turbopack)    |
+| Language   | TypeScript                         |
+| UI         | React, Tailwind CSS                |
+| Animation  | Framer Motion                      |
+| AI         | Vercel AI SDK + Anthropic (Claude) |
+| Deployment | Vercel                             |
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### The "Ask Sid" assistant
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The chat app calls `app/api/chat/route.ts`, which needs an Anthropic API key. Create
+a `.env.local` file in the project root with:
 
-## Learn More
+```
+ANTHROPIC_API_KEY=your-key-here
+```
 
-To learn more about Next.js, take a look at the following resources:
+Get a key at [console.anthropic.com](https://console.anthropic.com/). Without it, the
+route returns a friendly 503 instead of crashing. The assistant only answers from the
+facts in `data/content.ts`, it's instructed never to invent a number, date, or claim
+that isn't already on the site.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+data/
+  content.ts              All profile data: bio, work, education, mentors, links
 
-## Deploy on Vercel
+components/
+  IPadPage.tsx             Root orchestrator: lock/unlock, open app state
+  ipad/
+    IPadFrame.tsx           Hardware shell (bezel, Dynamic Island, home indicator)
+    HomeScreen.tsx          App grid + dock
+    LockScreen.tsx          Swipe-up-to-unlock lock screen
+    StatusBar.tsx           Time, wifi, battery
+    apps-registry.tsx       App metadata: icon, gradient, internal vs external
+    AppIcon.tsx             A single home-screen icon
+  apps/
+    AppWindow.tsx            Shared wrapper: header, back button, animation
+    AboutApp.tsx / WorkApp.tsx / EducationApp.tsx / OrganizationsApp.tsx
+    PhotosApp.tsx / MentorsApp.tsx / ContactApp.tsx / AskSidApp.tsx
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+app/
+  page.tsx                 Renders <IPadPage />
+  layout.tsx                Fonts, metadata
+  api/chat/route.ts         AI assistant backend
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Updating content
+
+Everything about Sid lives in [data/content.ts](data/content.ts). Edit that file to
+change any bio, work history, education detail, or link, the UI reads from it
+directly.
+
+To add more photos, drop files in `public/images/` and add them to the `photos` array
+in `components/apps/PhotosApp.tsx`.
+
+## Deployment
+
+Deployed on Vercel. Push to `main` and Vercel builds automatically. Set
+`ANTHROPIC_API_KEY` in the Vercel project's environment variables for the Ask Sid app
+to work in production.
+
+---
+
+Built by Sid Chowdhury
