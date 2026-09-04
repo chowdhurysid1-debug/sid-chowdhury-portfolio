@@ -159,7 +159,11 @@ export const settingsGroups: SettingsPage[][] = [
         { label: "Track", value: "Top-10 all-time freshman 200m at EPHS" },
         { label: "Biggest fish", value: "37-inch muskie" },
         { label: "Wakeboard or snowboard", value: "Wakeboard. Hurts less" },
-        { label: "Also", value: "Golf, photography" },
+        { label: "Behind the decks", value: "DJing" },
+        {
+          label: "Also",
+          value: "Golf, hiking, pickleball, wildlife photography",
+        },
       ],
     },
   ],
@@ -204,8 +208,9 @@ export const settingsGroups: SettingsPage[][] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Resume facts. Not rendered anywhere in the UI. Ask Sid reads these so it can
-// answer questions without the site itself turning into a resume dump.
+// Resume facts, from Chowdhury_Sid_Resume.pdf. Not rendered as an app. Ask Sid
+// reads these so it can answer questions without the site turning into a
+// resume dump. The PDF itself is in public/.
 // ---------------------------------------------------------------------------
 
 export type ExperienceEntry = {
@@ -221,12 +226,13 @@ export const founding: ExperienceEntry[] = [
   {
     org: "EP Venture Fund",
     role: "Co-Founder",
-    location: "Eden Prairie, MN",
+    location: "Minneapolis, MN",
     dates: "Oct 2025 - Present",
     active: true,
     bullets: [
-      "Built a $33K venture fund for founders who are legally minors: real fiscal sponsorship, real due diligence, real capital.",
-      "Evaluated 22 ventures, funded 3, deployed $22,375 in grants. Still advises all three.",
+      "Founded a student-run venture fund from scratch, building the fiscal sponsorship structure through the Foundation for Eden Prairie Schools and all operating infrastructure.",
+      "Sourced and screened 22 student ventures and funded 3: an animation studio, a chef marketplace platform, and a coordination platform for families managing an aging parent's care. Deployed $22,375 in non-equity grant capital.",
+      "Advised the animation studio on pricing and go-to-market, raising projected average contract value 62% and generating 11 qualified leads and 4 pilot clients. Advised the chef marketplace on a 15% commission model, onboarding 18 chefs and driving 21 pilot bookings.",
     ],
   },
   {
@@ -236,19 +242,20 @@ export const founding: ExperienceEntry[] = [
     dates: "May 2024 - Aug 2026",
     active: false,
     bullets: [
-      "Scaled a youth entrepreneurship program from 20 to 360+ kids across 6 schools.",
-      'Ran the annual "Shark Tank" competition, judged by real Chamber of Commerce executives and investors.',
+      "Scaled a district-backed youth entrepreneurship initiative from 20 to 360+ students across 5 elementary schools and 1 middle school, building the curriculum and program structure from scratch.",
+      "Built an 8-workshop startup curriculum for grades 3-8 taking students from idea to pitch, and directed the annual Shark Tank competition judged by Chamber of Commerce executives, entrepreneurs, and investors across 70+ student teams.",
+      "Drove a 42% increase in high school business class enrollment district-wide.",
     ],
   },
   {
     org: "DECA, Eden Prairie High School",
     role: "Competition Leader",
     location: "Eden Prairie, MN",
-    dates: "2023 - 2026",
+    dates: "Oct 2023 - Apr 2026",
     active: false,
     bullets: [
-      "Placed 3rd globally in Financial Services Team Decision Making at ICDC.",
-      "Trained 200+ other competitors using a notebook I wrote after losing my first competition.",
+      "Led Eden Prairie's #1-ranked chapter of 4,364 to national recognition. Placed 3rd globally at ICDC in 2025, then top-20 globally in 2026, after building a self-authored study system that became the team's core prep resource.",
+      "Trained 80+ competitors through 8 workshops and 100+ practice roleplays. Average scores rose from 64 to 85+, and 32 advanced to state, double the prior year.",
     ],
   },
 ];
@@ -261,8 +268,9 @@ export const experience: ExperienceEntry[] = [
     dates: "May 2025 - Aug 2025",
     active: false,
     bullets: [
-      "Ran a live $10,000 portfolio to a 27.8% return over 12 weeks, 18 trades.",
-      "Researched 55 public equities, 18 made it to active trading.",
+      "Managed a live $10,000 portfolio to a 27.8% return over 12 weeks across 18 trades, using Bollinger Bands, RSI, Fibonacci retracements, and options strategies.",
+      "Executed one options trade that returned 450%, driven by analysis of volatility, pricing, and risk-reward dynamics.",
+      "Researched 55 public equities using comparable-company analyses and 10-K/10-Q review, presenting theses to senior investors that led to 18 companies advancing to active trading.",
     ],
   },
   {
@@ -272,8 +280,9 @@ export const experience: ExperienceEntry[] = [
     dates: "Jun 2025 - Jul 2025",
     active: false,
     bullets: [
-      "1 of 6 Minnesota interns picked from 150 applicants, a 4% acceptance rate.",
-      "Led financial modeling for a nonprofit case, presented to C-suite execs in a nationwide intern competition.",
+      "Selected as 1 of 6 Minnesota interns from 150 regional applicants, a 4% acceptance rate, among 600+ nationwide candidates at the nation's 8th-largest accounting and consulting firm.",
+      "Rotated through Wealth Advisory, Digital/Cybersecurity, Audit, and Tax: client meetings, portfolio analysis, audit procedures, multi-state tax research, and cybersecurity risk assessments.",
+      "Led financial modeling for a pro bono case with the Black Men Teach nonprofit, building multi-year budget projections presented to C-suite executives in a nationwide intern competition.",
     ],
   },
 ];
@@ -286,8 +295,9 @@ export const academicProjects: ExperienceEntry[] = [
     dates: "Jun 2025 - Aug 2026",
     active: true,
     bullets: [
-      "Co-authored a paper on sea-level-rise risk to Middle East coastal real estate, in publication.",
-      "Built the valuation model (1,200+ observations, R² = 0.71), presented to 8 real estate firms in the UAE.",
+      "Co-authored a paper on the financial risks of rising sea levels to Middle East coastal real estate, integrating environmental science, economics, and valuation methodology. In the publication process.",
+      "Reviewed 20+ peer-reviewed papers and analyzed satellite-derived oceanographic data across Middle Eastern coastlines.",
+      "Built an MLR valuation model across 1,200+ observations (R² = 0.71) projecting up to 18% value deterioration in high-risk zones, presented to 8 real estate firms in Dubai and the UAE and contributing to updated risk disclosure processes.",
     ],
   },
 ];
@@ -301,7 +311,15 @@ export const education = {
   honors: [
     "IYA Faculty Scholar (top 6%)",
     "Holasek-Griffiths Scholarship in Business (top 0.13%)",
-    "DECA ICDC 3rd Place Globally (top 0.0043%)",
+    "DECA ICDC 3rd Place Globally (top 0.06%)",
+  ],
+  coursework: [
+    "Calculus 1+2",
+    "AP Macroeconomics",
+    "AP Statistics",
+    "AP Microeconomics",
+    "Innovators Forum",
+    "PM for Challenge-Based Learning",
   ],
   priorSchool: {
     name: "Eden Prairie High School",
@@ -314,10 +332,24 @@ export const education = {
 
 export const skills = {
   technical: [
-    "Website / DNS infrastructure (Netlify, Namecheap)",
-    "Excel (pivot tables, VLOOKUP, scenario analysis)",
-    "Multiple Linear Regression modeling",
-    "Technical analysis (Bollinger Bands, RSI, Fibonacci retracements)",
+    "Startup evaluation",
+    "Go-to-market strategy",
+    "Market research",
+    "Financial modeling",
+    "Product strategy",
+    "Data analysis",
+    "Excel",
+  ],
+  languages: ["English", "French", "Hindi", "Bengali"],
+  interests: [
+    "Golf",
+    "Fishing",
+    "Wakeboarding",
+    "Wildlife photography",
+    "Seattle Seahawks",
+    "DJing",
+    "Hiking",
+    "Pickleball",
   ],
 };
 
