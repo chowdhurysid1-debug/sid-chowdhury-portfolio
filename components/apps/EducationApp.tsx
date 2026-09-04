@@ -28,15 +28,6 @@ export function EducationApp() {
             ))}
           </div>
         </div>
-
-        <div className="mt-5">
-          <h4 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase">
-            Relevant Coursework
-          </h4>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-300">
-            {education.coursework.join(", ")}
-          </p>
-        </div>
       </div>
 
       <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 shadow-xl">

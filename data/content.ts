@@ -17,11 +17,10 @@ export const profile = {
 
 export const about = {
   intro:
-    "I'm an incoming freshman at USC, splitting my degree between the Iovine and Young Academy and the Marshall School of Business. I grew up in Dubai until I was ten, then moved to Eden Prairie, Minnesota with my mom and sister. My dad stayed in Dubai. Nobody was coming to get me, so I learned how to move.",
+    "I'm an incoming freshman at USC, splitting my degree between the Iovine and Young Academy and the Marshall School of Business.",
   paragraphs: [
-    "Most of what I've built comes back to one thing: capital and access don't reach people on merit, they reach people on pedigree and network. EP Venture Fund exists because minors legally can't start a company or sign a contract, so I built the fiscal-sponsorship structure that lets under-18 founders raise real money anyway.",
-    "Outside of that, I played varsity football for four years under Coach Mike Grant, ran track (top-10 all-time freshman 200m sprinter at Eden Prairie High School), and spent a summer managing a live investment portfolio at a hedge fund.",
-    "I was diagnosed with alopecia freshman year of high school. I spent a while trying to hide it before I stopped and put the energy into what I could actually control instead.",
+    "Most of what I build comes back to one thing: capital and access don't reach people on merit, they reach people on pedigree and network. EP Venture Fund exists because minors legally can't start a company or sign a contract, so I built the structure that lets under-18 founders raise real money anyway.",
+    "Outside of that: four years of varsity football under Coach Mike Grant, track, and a summer managing a live investment portfolio at a hedge fund.",
   ],
   interests: [
     "Photography (Tamron 35-150mm lens)",
@@ -58,10 +57,8 @@ export const founding: ExperienceEntry[] = [
     dates: "Oct 2025 - Present",
     active: true,
     bullets: [
-      "Co-founded and led a $33K student-run venture fund for under-18 founders, built on a fiscal-sponsorship structure through the Foundation for Eden Prairie Schools since minors can't legally found a 501(c)(3) or sign contracts.",
-      "Built the fund's own infrastructure (domain, DNS, email, website) and a due-diligence process modeled on real VC: quarterly pitches, milestone-based funding, demonstrated demand required before a dollar moves.",
-      "Evaluated 22 ventures and selected 3 for funding (14% selection rate), deploying $22,375 in non-equity grant capital. Sits in an advisory capacity on all 3 portfolio companies post-investment.",
-      "Managed donor relations with the Eden Prairie Chamber of Commerce, FEPS, Tennant Company, and Flagship Bank to support capital-raising.",
+      "Built a $33K venture fund for founders who are legally minors: real fiscal sponsorship, real due diligence, real capital.",
+      "Evaluated 22 ventures, funded 3, deployed $22,375 in grants. Still advises all three.",
     ],
   },
   {
@@ -71,10 +68,8 @@ export const founding: ExperienceEntry[] = [
     dates: "May 2024 - Aug 2026",
     active: false,
     bullets: [
-      "Co-founded and scaled a district-backed youth entrepreneurship initiative from 20 to 360+ students across 5 elementary schools and 1 middle school.",
-      "Forged an ongoing partnership with the Eden Prairie Chamber of Commerce, securing a mentorship network of local professionals and coordinating guest speaker sessions.",
-      "Built and implemented an 8-workshop curriculum (grades 3-8) covering market research, budgeting, product design, financial planning, and pitch strategy.",
-      'Directed the annual "Shark Tank" pitch competition, organizing logistics and judge panels of Chamber of Commerce executives, entrepreneurs, and investors to evaluate 70+ student teams\' ventures.',
+      "Scaled a youth entrepreneurship program from 20 to 360+ kids across 6 schools.",
+      'Ran the annual "Shark Tank" competition, judged by real Chamber of Commerce executives and investors.',
     ],
   },
   {
@@ -84,8 +79,8 @@ export const founding: ExperienceEntry[] = [
     dates: "2023 - 2026",
     active: false,
     bullets: [
-      "Placed 3rd Globally at ICDC in Financial Services Team Decision Making after a first-competition loss, building a self-authored notebook documenting every DECA performance indicator.",
-      "Ran workshops training 200+ other competitors: example roleplays, test-strategy breakdowns, and distributed copies of the notebook.",
+      "Placed 3rd globally in Financial Services Team Decision Making at ICDC.",
+      "Trained 200+ other competitors using a notebook I wrote after losing my first competition.",
     ],
   },
 ];
@@ -98,8 +93,8 @@ export const experience: ExperienceEntry[] = [
     dates: "May 2025 - Aug 2025",
     active: false,
     bullets: [
-      "Managed a live $10,000 investment portfolio, generating a 27.8% return over 12 weeks across 18 trades.",
-      "Researched 55 public equities using comparable-company analyses and 10-K/10-Q review, developing investment theses that led to 18 companies advancing to active trading.",
+      "Ran a live $10,000 portfolio to a 27.8% return over 12 weeks, 18 trades.",
+      "Researched 55 public equities, 18 made it to active trading.",
     ],
   },
   {
@@ -109,8 +104,8 @@ export const experience: ExperienceEntry[] = [
     dates: "Jun 2025 - Jul 2025",
     active: false,
     bullets: [
-      "Selected as 1 of 6 Minnesota interns from 150 regional applicants (4% acceptance rate) among 600+ nationwide candidates.",
-      "Led financial modeling for a pro bono case with Black Men Teach nonprofit, presented to C-suite executives in a nationwide intern competition.",
+      "1 of 6 Minnesota interns picked from 150 applicants, a 4% acceptance rate.",
+      "Led financial modeling for a nonprofit case, presented to C-suite execs in a nationwide intern competition.",
     ],
   },
 ];
@@ -123,8 +118,8 @@ export const academicProjects: ExperienceEntry[] = [
     dates: "Jun 2025 - Aug 2026",
     active: true,
     bullets: [
-      "Co-authored a research paper analyzing financial risks of rising sea levels on Middle East coastal real estate, currently in the publication process.",
-      "Developed an MLR valuation model across 1,200+ observations (R² = 0.71), presented to 8 real estate firms in Dubai and across the UAE.",
+      "Co-authored a paper on sea-level-rise risk to Middle East coastal real estate, in publication.",
+      "Built the valuation model (1,200+ observations, R² = 0.71), presented to 8 real estate firms in the UAE.",
     ],
   },
 ];
@@ -139,14 +134,6 @@ export const education = {
     "IYA Faculty Scholar (top 6%)",
     "Holasek-Griffiths Scholarship in Business (top 0.13%)",
     "DECA ICDC 3rd Place Globally (top 0.0043%)",
-  ],
-  coursework: [
-    "Calculus 1 + 2",
-    "AP Macroeconomics",
-    "AP Statistics",
-    "AP Microeconomics",
-    "Innovators Forum",
-    "Product Management for Challenge-Based Learning",
   ],
   priorSchool: {
     name: "Eden Prairie High School",
@@ -224,19 +211,16 @@ export const organizations = [
   {
     name: "EP Venture Fund",
     role: "Co-Founder",
-    description:
-      "A $33K student-run venture fund giving under-18 founders access to real, milestone-based capital. Built the fiscal-sponsorship structure that lets minors raise money legally.",
+    description: "$33K venture fund for founders who are legally minors.",
   },
   {
     name: "Junior Sharks",
     role: "Co-Founder",
-    description:
-      'District-backed youth entrepreneurship program, grades 3-8, grown from 20 to 360+ students across 6 schools. Tagline: "Where little fins make big waves."',
+    description: "Youth entrepreneurship program, 20 to 360+ kids, grades 3-8.",
   },
   {
     name: "DECA, Eden Prairie High School",
     role: "Competition Leader",
-    description:
-      "Competed and coached in Financial Services Team Decision Making. 3rd place globally at ICDC.",
+    description: "3rd place globally, Financial Services Team Decision Making.",
   },
 ];
