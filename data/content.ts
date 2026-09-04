@@ -355,25 +355,10 @@ export const cinema = {
     { title: "Whiplash", rating: 5 },
     { title: "The Hangover", rating: 4 },
   ] as Film[],
-  lists: [
-    "Movies that make me want to build something",
-    "Perfect plane movies",
-    "Movies I will defend way too aggressively",
-    "Actually worth the 2.5+ hour runtime",
-  ],
 };
 
-export type Playlist = {
-  name: string;
-  description: string;
-  gradient: string;
-  // Paste a Spotify playlist share link's embed form here and the card turns
-  // into a real player: https://open.spotify.com/embed/playlist/<id>
-  embedUrl?: string;
-};
-
-// Real Stats for Spotify exports. Ranges are labeled in the order Sid pasted
-// them; confirm the mapping before treating the labels as exact.
+// Real Stats for Spotify export. Range labels follow the order Sid pasted
+// them in; confirm the mapping if it matters.
 export type Track = { title: string; artist: string };
 
 export const spotifyStats = {
@@ -475,23 +460,6 @@ export const listening = {
   minutes: "",
   topGenre: "",
   spotifyUrl: "",
-  playlists: [
-    {
-      name: "Windows Down",
-      description: "Songs for driving around LA.",
-      gradient: "from-orange-500 to-red-600",
-    },
-    {
-      name: "Boat Aux",
-      description: "What gets played on the Malibu.",
-      gradient: "from-sky-500 to-blue-700",
-    },
-    {
-      name: "1:37 AM",
-      description: "What plays while building something.",
-      gradient: "from-violet-600 to-indigo-800",
-    },
-  ] as Playlist[],
   funStat: "Most dangerous privilege: being handed the aux.",
 };
 

@@ -35,11 +35,9 @@ function Equalizer({ playing }: { playing: boolean }) {
 }
 
 export function ListeningApp() {
-  const [open, setOpen] = useState<string | null>(null);
   const [playing, setPlaying] = useState(true);
   const [tab, setTab] = useState<"artists" | "tracks">("artists");
   const [range, setRange] = useState<string>("4 weeks");
-  const openPlaylist = listening.playlists.find((p) => p.name === open);
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-6 sm:px-8">
@@ -146,91 +144,6 @@ export function ListeningApp() {
         </div>
         <Equalizer playing={playing} />
       </div>
-
-      {openPlaylist?.embedUrl && (
-        <div className="mt-4 overflow-hidden rounded-xl">
-          <iframe
-            src={openPlaylist.embedUrl}
-            width="100%"
-            height="352"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            title={openPlaylist.name}
-          />
-        </div>
-      )}
-
-      <section className="mt-7">
-        <h2 className="text-[11px] font-semibold tracking-widest text-zinc-500 uppercase">
-          Playlists
-        </h2>
-        <div className="mt-3 grid gap-3 sm:grid-cols-3">
-          {listening.playlists.map((playlist) => {
-            const isOpen = open === playlist.name;
-            return (
-              <button
-                key={playlist.name}
-                type="button"
-                onClick={() => setOpen(isOpen ? null : playlist.name)}
-                className={`cursor-pointer overflow-hidden rounded-xl border text-left transition-all duration-200 ${
-                  isOpen
-                    ? "border-[#1db954] bg-zinc-900"
-                    : "border-zinc-800 bg-zinc-900 hover:border-zinc-700"
-                }`}
-              >
-                <div
-                  className={`relative aspect-square w-full bg-gradient-to-br ${playlist.gradient}`}
-                >
-                  <motion.div
-                    animate={{
-                      scale: isOpen ? 1 : 0.8,
-                      opacity: isOpen ? 1 : 0,
-                    }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="absolute right-2 bottom-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#1db954] shadow-lg"
-                  >
-                    <Play
-                      className="h-3.5 w-3.5 translate-x-px fill-black"
-                      strokeWidth={0}
-                    />
-                  </motion.div>
-                </div>
-                <div className="p-3">
-                  <p className="text-sm font-semibold text-white">
-                    {playlist.name}
-                  </p>
-                  <AnimatePresence initial={false}>
-                    {isOpen ? (
-                      <motion.p
-                        key="desc"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden text-[13px] leading-snug text-zinc-400"
-                      >
-                        <span className="block pt-1">
-                          {playlist.description}
-                        </span>
-                      </motion.p>
-                    ) : (
-                      <motion.p
-                        key="hint"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="pt-1 text-[13px] text-zinc-600"
-                      >
-                        Tap to open
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </section>
 
       <p className="mt-7 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-sm text-zinc-300">
         {listening.funStat}

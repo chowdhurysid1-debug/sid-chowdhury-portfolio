@@ -58,7 +58,7 @@ export function CinemaApp() {
 
       <section className="mt-6">
         <h2 className="text-[11px] font-semibold tracking-widest text-zinc-500 uppercase">
-          Favorite four
+          Favorites
         </h2>
         <div className="mt-2">
           {cinema.favorites.map((film) => (
@@ -67,29 +67,13 @@ export function CinemaApp() {
         </div>
       </section>
 
-      <section className="mt-7">
+      <section className="mt-7 pb-4">
         <h2 className="text-[11px] font-semibold tracking-widest text-zinc-500 uppercase">
           Recent activity
         </h2>
         <div className="mt-2">
           {cinema.recent.map((film) => (
             <FilmRow key={film.title} film={film} />
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-7 pb-4">
-        <h2 className="text-[11px] font-semibold tracking-widest text-zinc-500 uppercase">
-          Lists
-        </h2>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          {cinema.lists.map((list) => (
-            <div
-              key={list}
-              className="rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-sm text-zinc-300 transition-all duration-200 hover:border-zinc-700 hover:text-white"
-            >
-              {list}
-            </div>
           ))}
         </div>
       </section>
