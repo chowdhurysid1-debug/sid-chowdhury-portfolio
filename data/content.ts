@@ -334,12 +334,8 @@ export type Film = {
 };
 
 export const cinema = {
-  stats: [
-    { label: "Films", value: "147" },
-    { label: "This year", value: "38" },
-    { label: "Lists", value: "6" },
-  ],
   favorites: [
+    { title: "Dead Poets Society", rating: 5 },
     { title: "The Social Network", rating: 5 },
     { title: "Interstellar", rating: 5 },
     { title: "The Wolf of Wall Street", rating: 4.5 },

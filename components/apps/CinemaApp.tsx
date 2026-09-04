@@ -35,25 +35,13 @@ function FilmRow({ film }: { film: Film }) {
 export function CinemaApp() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-6 sm:px-8">
-      <div className="flex items-center justify-between gap-6 border-b border-zinc-800 pb-5">
-        <div>
-          <p className="text-xs tracking-widest text-zinc-500 uppercase">
-            Letterboxd
-          </p>
-          <h1 className="mt-1 text-2xl font-bold tracking-tight text-white">
-            {profile.name.split(" ")[0]}&rsquo;s Cinema
-          </h1>
-        </div>
-        <div className="flex gap-5">
-          {cinema.stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-lg font-semibold text-white">{stat.value}</p>
-              <p className="text-[10px] tracking-wider text-zinc-500 uppercase">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="border-b border-zinc-800 pb-5">
+        <p className="text-xs tracking-widest text-zinc-500 uppercase">
+          Letterboxd
+        </p>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight text-white">
+          {profile.name.split(" ")[0]}&rsquo;s Cinema
+        </h1>
       </div>
 
       <section className="mt-6">
