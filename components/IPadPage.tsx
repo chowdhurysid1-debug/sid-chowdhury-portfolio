@@ -8,21 +8,13 @@ import { HomeScreen } from "@/components/ipad/HomeScreen";
 import { AppWindow } from "@/components/apps/AppWindow";
 import type { AppDefinition } from "@/components/ipad/apps-registry";
 import { AboutApp } from "@/components/apps/AboutApp";
-import { WorkApp } from "@/components/apps/WorkApp";
-import { EducationApp } from "@/components/apps/EducationApp";
-import { OrganizationsApp } from "@/components/apps/OrganizationsApp";
 import { PhotosApp } from "@/components/apps/PhotosApp";
-import { MentorsApp } from "@/components/apps/MentorsApp";
 import { ContactApp } from "@/components/apps/ContactApp";
 import { AskSidApp } from "@/components/apps/AskSidApp";
 
 const appComponents: Record<string, ComponentType> = {
   about: AboutApp,
-  work: WorkApp,
-  education: EducationApp,
-  organizations: OrganizationsApp,
   photos: PhotosApp,
-  mentors: MentorsApp,
   mail: ContactApp,
   asksid: AskSidApp,
 };

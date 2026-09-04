@@ -1,14 +1,4 @@
-import {
-  User,
-  Briefcase,
-  GraduationCap,
-  Building2,
-  Images,
-  Users,
-  Mail,
-  Sparkles,
-  FileText,
-} from "lucide-react";
+import { User, Images, Mail, Sparkles, FileText } from "lucide-react";
 import type { ComponentType } from "react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
@@ -34,40 +24,12 @@ export const apps: AppDefinition[] = [
     inDock: true,
   },
   {
-    id: "work",
-    label: "Work",
-    icon: Briefcase,
-    gradient: "from-indigo-500 to-indigo-700",
-    kind: "internal",
-    inDock: true,
-  },
-  {
-    id: "education",
-    label: "Education",
-    icon: GraduationCap,
-    gradient: "from-sky-500 to-blue-700",
-    kind: "internal",
-  },
-  {
-    id: "organizations",
-    label: "Organizations",
-    icon: Building2,
-    gradient: "from-amber-500 to-orange-600",
-    kind: "internal",
-  },
-  {
     id: "photos",
     label: "Photos",
     icon: Images,
     gradient: "from-fuchsia-500 to-pink-600",
     kind: "internal",
-  },
-  {
-    id: "mentors",
-    label: "Mentors",
-    icon: Users,
-    gradient: "from-emerald-500 to-teal-600",
-    kind: "internal",
+    inDock: true,
   },
   {
     id: "mail",

@@ -8,13 +8,11 @@ import {
 } from "ai";
 import { z } from "zod";
 import {
-  about,
+  aboutSections,
   academicProjects,
   education,
   experience,
   founding,
-  mentors,
-  organizations,
   profile,
   skills,
 } from "@/data/content";
@@ -28,14 +26,12 @@ const requestSchema = z.object({
 function buildSystemPrompt() {
   const facts = {
     profile,
-    about,
+    about: aboutSections,
     founding,
     experience,
     academicProjects,
     education,
     skills,
-    mentors,
-    organizations,
   };
 
   return [

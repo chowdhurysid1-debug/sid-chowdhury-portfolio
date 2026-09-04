@@ -1,6 +1,12 @@
-// All profile data for the site lives here. Every fact below comes from Sid's
-// own resume (Chowdhury_Siddharth_Resume.pdf, finalized Sep 2, 2026). Nothing
-// here is invented, edit this file directly to update the site.
+// All profile data for the site lives here.
+//
+// Two kinds of content in this file:
+//   1. What the site actually renders (profile, aboutSections, interests).
+//   2. Resume facts that no longer appear as apps, kept only so the Ask Sid
+//      assistant can answer factual questions. The resume itself lives in
+//      public/Chowdhury_Siddharth_Resume.pdf.
+//
+// Nothing here is invented. Edit this file directly to update the site.
 
 export const profile = {
   name: "Sid Chowdhury",
@@ -8,37 +14,97 @@ export const profile = {
   tagline:
     "Building the mechanisms that get capital and access to people who earn it, not just people born near it.",
   location: "Los Angeles, CA",
-  email: "siddd2909@gmail.com",
+  email: "sidchowd@usc.edu",
   phone: "612-283-8006",
   linkedin: "https://www.linkedin.com/in/sid-chowdhury0",
   github: "https://github.com/chowdhurysid1-debug",
   headshot: "/images/headshot.png",
 };
 
-export const about = {
-  intro:
-    "I'm an incoming freshman at USC, splitting my degree between the Iovine and Young Academy and the Marshall School of Business.",
-  paragraphs: [
-    "Most of what I build comes back to one thing: capital and access don't reach people on merit, they reach people on pedigree and network. EP Venture Fund exists because minors legally can't start a company or sign a contract, so I built the structure that lets under-18 founders raise real money anyway.",
-    "Outside of that: four years of varsity football under Coach Mike Grant, track, and a summer managing a live investment portfolio at a hedge fund.",
-  ],
-  interests: [
-    "Photography (Tamron 35-150mm lens)",
-    "Golf",
-    "Fishing",
-    "Wakeboarding",
-    "Cars and watches",
-    "Financial markets",
-    "Seattle Seahawks",
-  ],
-  languages: ["English", "French", "Hindi", "Bengali"],
-  quickFacts: [
-    { label: "GPA", value: "3.922 / 4.0 (EPHS)" },
-    { label: "SAT", value: "1540" },
-    { label: "Major", value: "Business of Innovation (BUIN)" },
-    { label: "Grad", value: "May 2030" },
-  ],
+// The About app renders as an iPhone Settings screen: grouped rows, each with
+// an icon, a label, and a value. Add rows here and they show up in the UI.
+export type SettingsRow = {
+  icon: SettingsIcon;
+  label: string;
+  value: string;
 };
+
+export type SettingsIcon =
+  | "pin"
+  | "home"
+  | "school"
+  | "football"
+  | "run"
+  | "golf"
+  | "fish"
+  | "waves"
+  | "camera"
+  | "car"
+  | "watch"
+  | "chart"
+  | "music"
+  | "film"
+  | "book"
+  | "food"
+  | "heart"
+  | "star";
+
+export type SettingsSection = {
+  title: string;
+  rows: SettingsRow[];
+};
+
+export const aboutSections: SettingsSection[] = [
+  {
+    title: "Basics",
+    rows: [
+      { icon: "pin", label: "Currently", value: "Los Angeles, CA" },
+      {
+        icon: "home",
+        label: "Hometown",
+        value: "Eden Prairie, MN, by way of Dubai",
+      },
+      {
+        icon: "school",
+        label: "School",
+        value: "USC, Iovine and Young + Marshall",
+      },
+    ],
+  },
+  {
+    title: "Also true",
+    rows: [
+      {
+        icon: "football",
+        label: "Football",
+        value: "Four years varsity under Coach Mike Grant",
+      },
+      {
+        icon: "run",
+        label: "Track",
+        value: "Top-10 all-time freshman 200m at EPHS",
+      },
+    ],
+  },
+  {
+    title: "Into it",
+    rows: [
+      { icon: "golf", label: "Golf", value: "" },
+      { icon: "fish", label: "Fishing", value: "" },
+      { icon: "waves", label: "Wakeboarding", value: "" },
+      { icon: "camera", label: "Photography", value: "" },
+      { icon: "car", label: "Cars", value: "" },
+      { icon: "watch", label: "Watches", value: "" },
+      { icon: "chart", label: "Markets", value: "" },
+      { icon: "football", label: "Seahawks", value: "" },
+    ],
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Resume facts. Not rendered anywhere in the UI. Ask Sid reads these so it can
+// answer questions without the site itself turning into a resume dump.
+// ---------------------------------------------------------------------------
 
 export type ExperienceEntry = {
   org: string;
@@ -152,75 +218,3 @@ export const skills = {
     "Technical analysis (Bollinger Bands, RSI, Fibonacci retracements)",
   ],
 };
-
-export type Mentor = {
-  name: string;
-  role: string;
-  note: string;
-};
-
-export const mentors: Mentor[] = [
-  {
-    name: "Coach Mike Grant",
-    role: "Football Head Coach, Eden Prairie High School",
-    note: 'Source of the team\'s "Men for Others" ethos. Coached Sid across four years of varsity football.',
-  },
-  {
-    name: "Prof. Avijit Gangopadhyay",
-    role: "UMass Dartmouth",
-    note: "Research mentor for the coastal real-estate climate-risk paper, guided the MLR valuation model.",
-  },
-  {
-    name: "Aarav Gupta",
-    role: "Co-Founder, EP Venture Fund",
-    note: "EPHS Class of 2027. Now running EP Venture Fund solo as Sid hands off full leadership post-matriculation.",
-  },
-  {
-    name: "Mr. Zach Hanson",
-    role: "Math/CS Teacher and Track Coach, EPHS",
-    note: "Wrote Sid's recommendation for an EY Entrepreneur of the Year Youth Scholarship application.",
-  },
-  {
-    name: "Anique James",
-    role: "USC IYA Academic Advisor",
-    note: "Built Sid's four-year BUIN plan at USC.",
-  },
-];
-
-export type ExternalLink = {
-  label: string;
-  url: string;
-  icon: "github" | "linkedin" | "mail" | "calendar";
-};
-
-export const externalLinks: ExternalLink[] = [
-  {
-    label: "GitHub",
-    url: "https://github.com/chowdhurysid1-debug",
-    icon: "github",
-  },
-  {
-    label: "LinkedIn",
-    url: "https://www.linkedin.com/in/sid-chowdhury0",
-    icon: "linkedin",
-  },
-  { label: "Email", url: "mailto:siddd2909@gmail.com", icon: "mail" },
-];
-
-export const organizations = [
-  {
-    name: "EP Venture Fund",
-    role: "Co-Founder",
-    description: "$33K venture fund for founders who are legally minors.",
-  },
-  {
-    name: "Junior Sharks",
-    role: "Co-Founder",
-    description: "Youth entrepreneurship program, 20 to 360+ kids, grades 3-8.",
-  },
-  {
-    name: "DECA, Eden Prairie High School",
-    role: "Competition Leader",
-    description: "3rd place globally, Financial Services Team Decision Making.",
-  },
-];
