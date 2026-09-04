@@ -516,3 +516,105 @@ export const garage = {
   rabbitHole:
     "Figuring out exactly how much bilge-pump capacity a 21-foot boat actually needs.",
 };
+
+// Find My. People are labeled by relationship, not by name, and pinned at
+// city level only. That is deliberate: they did not sign up to be on a
+// public site.
+export type Person = {
+  id: string;
+  label: string;
+  place: string;
+  detail: string;
+  lat: number;
+  lon: number;
+  color: string;
+};
+
+export const people: Person[] = [
+  {
+    id: "sid",
+    label: "Sid",
+    place: "Los Angeles, CA",
+    detail: "USC. Where the next four years happen.",
+    lat: 34.0224,
+    lon: -118.2851,
+    color: "#6366f1",
+  },
+  {
+    id: "dad",
+    label: "Dad",
+    place: "Dubai, UAE",
+    detail: "Stayed when the rest of us moved. Where the first ten years were.",
+    lat: 25.2048,
+    lon: 55.2708,
+    color: "#f59e0b",
+  },
+  {
+    id: "mom",
+    label: "Mom",
+    place: "Minneapolis, MN",
+    detail: "Home base.",
+    lat: 44.9778,
+    lon: -93.265,
+    color: "#10b981",
+  },
+  {
+    id: "sister",
+    label: "Sister",
+    place: "Minneapolis, MN",
+    detail: "Also home base.",
+    lat: 44.9695,
+    lon: -93.2415,
+    color: "#ec4899",
+  },
+  {
+    id: "girlfriend",
+    label: "Girlfriend",
+    place: "Minneapolis, MN",
+    detail: "1,900 miles from campus.",
+    lat: 44.9886,
+    lon: -93.2955,
+    color: "#f43f5e",
+  },
+  {
+    id: "bestfriend",
+    label: "Best friend",
+    place: "Madison, WI",
+    detail: "Different school, same group chat.",
+    lat: 43.0731,
+    lon: -89.4012,
+    color: "#38bdf8",
+  },
+  {
+    id: "boat",
+    label: "The Malibu",
+    place: "A lake in Minnesota",
+    detail: "Last seen running. See the Garage app.",
+    lat: 44.9,
+    lon: -93.6,
+    color: "#0ea5e9",
+  },
+];
+
+// The rest of the Garage: things built, and the virtual fleet.
+export const builds = [
+  {
+    name: "Racing sim rig",
+    material: "Wood, built from scratch",
+    detail:
+      "Cut, drilled, and assembled a full sim racing rig out of wood instead of buying an aluminum profile kit.",
+  },
+];
+
+// Sid owns every car in Forza Horizon, so this is a shortlist of what is
+// actually worth driving, not a claim about a rare collection.
+export const forzaGarage = [
+  { car: "Ferrari F40 Competizione", year: "1989", tag: "Loud" },
+  { car: "Porsche 911 GT2 RS", year: "2018", tag: "Fastest point to point" },
+  { car: "Lamborghini Countach LPI 800-4", year: "2022", tag: "Poster car" },
+  { car: "Ford GT", year: "2017", tag: "Track" },
+  { car: "Koenigsegg Jesko", year: "2020", tag: "Top speed runs" },
+  { car: "Ram TRX", year: "2021", tag: "The one I actually want" },
+  { car: "Nissan Skyline GT-R V-Spec", year: "1999", tag: "Never gets old" },
+  { car: "Mercedes-AMG One", year: "2021", tag: "Hypercar" },
+];

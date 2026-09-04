@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type ComponentType } from "react";
-import { AnimatePresence } from "framer-motion";
+import { useState, useEffect, type ComponentType } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { IPadFrame } from "@/components/ipad/IPadFrame";
+import { BootScreen } from "@/components/ipad/BootScreen";
 import { LockScreen } from "@/components/ipad/LockScreen";
 import { HomeScreen } from "@/components/ipad/HomeScreen";
 import { AppWindow } from "@/components/apps/AppWindow";
@@ -32,12 +33,51 @@ const appComponents: Record<string, ComponentType> = {
 export function IPadPage() {
   const [locked, setLocked] = useState(true);
   const [activeApp, setActiveApp] = useState<AppDefinition | null>(null);
+  const [booting, setBooting] = useState(true);
+  const [screenOn, setScreenOn] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setBooting(false), 2100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Pressing power sleeps the device. Waking it returns to the lock screen,
+  // and closes whatever app was open, the way a real one does.
+  function togglePower() {
+    setScreenOn((on) => {
+      if (on) {
+        setActiveApp(null);
+        setLocked(true);
+      }
+      return !on;
+    });
+  }
 
   const ActiveComponent = activeApp ? appComponents[activeApp.id] : null;
 
   return (
     <div className="h-dvh w-dvw">
-      <IPadFrame>
+      <IPadFrame onPower={togglePower}>
+        <AnimatePresence>
+          {booting && <BootScreen key="boot" />}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {!screenOn && (
+            <motion.button
+              key="asleep"
+              type="button"
+              onClick={togglePower}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              aria-label="Wake"
+              className="absolute inset-0 z-40 cursor-pointer bg-black"
+            />
+          )}
+        </AnimatePresence>
+
         <AnimatePresence mode="wait">
           {locked ? (
             <LockScreen key="lock" onUnlock={() => setLocked(false)} />

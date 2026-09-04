@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { garage } from "@/data/content";
+import { garage, builds, forzaGarage } from "@/data/content";
 
 export function GarageApp() {
   const [openEntry, setOpenEntry] = useState<string | null>(
@@ -130,6 +130,65 @@ export function GarageApp() {
                 <p className="mt-1 text-[14px] leading-relaxed text-zinc-500">
                   {lesson.body}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Things built by hand */}
+        <div className="mt-8">
+          <div className="flex items-baseline justify-between border-b border-zinc-800 pb-1.5">
+            <h2 className="font-mono text-[13px] tracking-[0.2em] text-zinc-400 uppercase">
+              Built by hand
+            </h2>
+          </div>
+          {builds.map((build) => (
+            <div key={build.name} className="flex gap-4 py-4">
+              <span className="pt-1 font-mono text-[13px] text-zinc-700">
+                &#9633;
+              </span>
+              <div>
+                <p className="text-[15px] font-medium text-zinc-100">
+                  {build.name}
+                </p>
+                <p className="mt-0.5 font-mono text-[12px] tracking-wide text-amber-600/90 uppercase">
+                  {build.material}
+                </p>
+                <p className="mt-1.5 text-[14px] leading-relaxed text-zinc-500">
+                  {build.detail}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Virtual fleet */}
+        <div className="mt-8">
+          <div className="flex items-baseline justify-between border-b border-zinc-800 pb-1.5">
+            <h2 className="font-mono text-[13px] tracking-[0.2em] text-zinc-400 uppercase">
+              Forza garage
+            </h2>
+            <span className="font-mono text-[11px] text-zinc-700">
+              owns every car
+            </span>
+          </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            {forzaGarage.map((entry) => (
+              <div
+                key={entry.car}
+                className="flex items-baseline justify-between gap-3 border border-zinc-900 bg-black/40 px-3 py-2.5"
+              >
+                <div className="min-w-0">
+                  <p className="truncate text-[14px] text-zinc-100">
+                    {entry.car}
+                  </p>
+                  <p className="font-mono text-[11px] text-zinc-600">
+                    {entry.year}
+                  </p>
+                </div>
+                <span className="shrink-0 font-mono text-[10px] tracking-wider text-amber-600/80 uppercase">
+                  {entry.tag}
+                </span>
               </div>
             ))}
           </div>

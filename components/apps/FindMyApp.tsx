@@ -1,69 +1,68 @@
-import { MapPin, Anchor, House, Plane } from "lucide-react";
+"use client";
 
-const pins = [
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import { people, type Person } from "@/data/content";
+
+// Leaflet touches window on import, so the map only loads in the browser.
+const FindMyMap = dynamic(
+  () => import("./FindMyMap").then((mod) => mod.FindMyMap),
   {
-    icon: MapPin,
-    tint: "bg-indigo-500",
-    name: "Sid",
-    place: "Los Angeles, CA",
-    detail: "USC. Where the next four years happen.",
+    ssr: false,
+    loading: () => <div className="h-full w-full animate-pulse bg-zinc-900" />,
   },
-  {
-    icon: Anchor,
-    tint: "bg-sky-500",
-    name: "The Malibu",
-    place: "A lake in Minnesota",
-    detail: "Last seen running. See the Garage app for the full story.",
-  },
-  {
-    icon: House,
-    tint: "bg-emerald-600",
-    name: "Home",
-    place: "Eden Prairie, MN",
-    detail: "Fifth grade through graduation.",
-  },
-  {
-    icon: Plane,
-    tint: "bg-amber-500",
-    name: "Where it started",
-    place: "Dubai, UAE",
-    detail: "The first ten years.",
-  },
-];
+);
 
 export function FindMyApp() {
-  return (
-    <div className="mx-auto max-w-xl px-6 py-6 sm:px-8">
-      <h1 className="text-2xl font-bold tracking-tight text-white">Find My</h1>
-      <p className="mt-1 text-sm text-zinc-400">
-        Four places, in the order they happened.
-      </p>
+  const [selected, setSelected] = useState<Person | null>(null);
 
-      <div className="mt-5 overflow-hidden rounded-2xl bg-zinc-900">
-        {pins.map((pin, i) => {
-          const Icon = pin.icon;
-          return (
-            <div
-              key={pin.name}
-              className={`flex items-start gap-3.5 px-4 py-3.5 ${
-                i > 0 ? "border-t border-zinc-800" : ""
-              }`}
-            >
-              <div
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${pin.tint}`}
+  return (
+    <div className="flex h-full flex-col sm:flex-row">
+      <div className="h-1/2 w-full sm:h-full sm:flex-1">
+        <FindMyMap people={people} selected={selected} onSelect={setSelected} />
+      </div>
+
+      <div className="h-1/2 w-full overflow-y-auto border-t border-zinc-800 bg-black sm:h-full sm:w-[300px] sm:border-t-0 sm:border-l">
+        <div className="px-4 pt-4 pb-2">
+          <h1 className="text-xl font-bold tracking-tight text-white">
+            People
+          </h1>
+          <p className="mt-0.5 text-[13px] text-zinc-500">
+            Tap anyone to fly there.
+          </p>
+        </div>
+
+        <div className="pb-4">
+          {people.map((person) => {
+            const isActive = selected?.id === person.id;
+            return (
+              <button
+                key={person.id}
+                type="button"
+                onClick={() => setSelected(person)}
+                className={`flex w-full cursor-pointer items-start gap-3 px-4 py-3 text-left transition-colors duration-150 ${
+                  isActive ? "bg-zinc-900" : "hover:bg-zinc-900/60"
+                }`}
               >
-                <Icon className="h-4.5 w-4.5 text-white" strokeWidth={2} />
-              </div>
-              <div>
-                <p className="text-[15px] font-medium text-white">{pin.name}</p>
-                <p className="text-[13px] text-zinc-400">{pin.place}</p>
-                <p className="mt-0.5 text-[13px] leading-relaxed text-zinc-500">
-                  {pin.detail}
-                </p>
-              </div>
-            </div>
-          );
-        })}
+                <span
+                  className="mt-1 h-3 w-3 shrink-0 rounded-full ring-2 ring-white/80"
+                  style={{ backgroundColor: person.color }}
+                />
+                <span className="min-w-0">
+                  <span className="block text-[15px] font-medium text-white">
+                    {person.label}
+                  </span>
+                  <span className="block text-[13px] text-zinc-400">
+                    {person.place}
+                  </span>
+                  <span className="mt-0.5 block text-[13px] leading-snug text-zinc-500">
+                    {person.detail}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
