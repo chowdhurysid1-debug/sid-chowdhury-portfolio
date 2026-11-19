@@ -10,6 +10,7 @@ import {
   CloudSun,
   Radar,
   Rocket,
+  Layers,
 } from "lucide-react";
 import type { ComponentType } from "react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
@@ -27,6 +28,14 @@ export type AppDefinition = {
 };
 
 export const apps: AppDefinition[] = [
+  {
+    id: "product",
+    label: "Product",
+    icon: Layers,
+    gradient: "from-indigo-500 to-blue-700",
+    kind: "internal",
+    inDock: true,
+  },
   {
     id: "about",
     label: "About",

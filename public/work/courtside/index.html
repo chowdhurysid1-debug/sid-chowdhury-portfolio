@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Courtside Connect</title>
+    <meta
+      name="description"
+      content="Courtside Connect pitch, ACAD 183 Group 6. Live sports, shared from the hospital bed."
+    />
+    <link rel="stylesheet" href="css/deck.css" />
+  </head>
+  <body class="is-intro">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-chev-left" viewBox="0 0 24 24">
+        <path d="m15 18-6-6 6-6" />
+      </symbol>
+      <symbol id="i-chev-right" viewBox="0 0 24 24">
+        <path d="m9 18 6-6-6-6" />
+      </symbol>
+      <symbol id="i-notes" viewBox="0 0 24 24">
+        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+        <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+        <path d="M16 13H8" />
+        <path d="M16 17H8" />
+        <path d="M10 9H8" />
+      </symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect width="7" height="7" x="3" y="3" rx="1" />
+        <rect width="7" height="7" x="14" y="3" rx="1" />
+        <rect width="7" height="7" x="14" y="14" rx="1" />
+        <rect width="7" height="7" x="3" y="14" rx="1" />
+      </symbol>
+      <symbol id="i-max" viewBox="0 0 24 24">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+        <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+        <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+        <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+      </symbol>
+      <symbol id="i-vol-x" viewBox="0 0 24 24">
+        <path
+          d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"
+        />
+        <path d="M22 9l-6 6" />
+        <path d="M16 9l6 6" />
+      </symbol>
+      <symbol id="i-vol" viewBox="0 0 24 24">
+        <path
+          d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"
+        />
+        <path d="M16 9a5 5 0 0 1 0 6" />
+        <path d="M19.4 18.4a9 9 0 0 0 0-12.8" />
+      </symbol>
+      <symbol id="i-rotate" viewBox="0 0 24 24">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+        <path d="M3 3v5h5" />
+      </symbol>
+      <symbol id="i-flip" viewBox="0 0 24 24">
+        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+        <path d="M21 3v5h-5" />
+        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+        <path d="M8 16H3v5" />
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+        <rect width="20" height="14" x="2" y="6" rx="2" />
+      </symbol>
+      <symbol id="i-bed" viewBox="0 0 24 24">
+        <path d="M2 4v16" />
+        <path d="M2 8h18a2 2 0 0 1 2 2v10" />
+        <path d="M2 17h20" />
+        <path d="M6 8v9" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path
+          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+        />
+        <path d="M9 12h6" />
+        <path d="M12 9v6" />
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 16v-4" />
+        <path d="M12 8h.01" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+        <path d="M18 17V9" />
+        <path d="M13 17V5" />
+        <path d="M8 17v-3" />
+      </symbol>
+      <symbol id="i-table" viewBox="0 0 24 24">
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M3 9h18" />
+        <path d="M3 15h18" />
+        <path d="M12 3v18" />
+      </symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24">
+        <path
+          d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+        />
+        <path d="M12 9v4" />
+        <path d="M12 17h.01" />
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="M6 3l14 9-14 9z" />
+      </symbol>
+    </svg>
+
+    <canvas id="arena" aria-hidden="true"></canvas>
+
+    <div id="stage">
+      <!-- OPENING SCOREBOARD -->
+      <section
+        id="intro"
+        aria-label="Opening scoreboard. Press space to begin."
+      >
+        <div class="jt" aria-hidden="true">
+          <div class="jt-cables"><i></i><i></i></div>
+          <div class="jt-frame">
+            <div class="jt-bulbs jt-bulbs-top"></div>
+            <div class="jt-bulbs jt-bulbs-bottom"></div>
+            <div class="jt-screen">
+              <div class="jt-head">
+                <span class="live-badge"><i></i>LIVE</span>
+                <span class="jt-q">Q3</span>
+              </div>
+              <div class="jt-score">
+                <div class="jt-team">
+                  <span class="jt-team-label">HOME</span
+                  ><span class="seg seg-xl" data-ghost="88">54</span>
+                </div>
+                <span class="jt-colon">:</span>
+                <div class="jt-team">
+                  <span class="jt-team-label">GUEST</span
+                  ><span class="seg seg-xl" data-ghost="88">52</span>
+                </div>
+              </div>
+              <div class="jt-foot">
+                <span class="seg jt-clock" id="jt-clock" data-ghost="8:88"
+                  >7:42</span
+                >
+              </div>
+              <div class="jt-flash"></div>
+              <div class="led-mask"></div>
+            </div>
+          </div>
+        </div>
+        <div class="intro-l3" aria-hidden="true">
+          <div class="intro-l3-top">
+            <span class="intro-l3-dot"></span>COURTSIDE CONNECT
+          </div>
+          <div class="intro-l3-sub">
+            Live sports, shared from the hospital bed.
+          </div>
+        </div>
+        <button class="intro-prompt" id="tipoff" type="button">
+          PRESS SPACE TO TIP OFF
+        </button>
+      </section>
+
+      <main id="deck">
+        <!-- 1 COVER -->
+        <section
+          class="slide s-cover"
+          data-title="Cover"
+          aria-label="Slide 1: Cover"
+        >
+          <div class="cover-main">
+            <p class="tag tag-terra in in-l d1">ACAD 183, Group 6</p>
+            <h1 class="cover-title in in-up d2">
+              <span>Courtside</span> <span>Connect</span>
+            </h1>
+            <p class="cover-tagline in in-up d3">
+              “Live sports, shared from the hospital bed.”
+            </p>
+          </div>
+          <div class="lineup">
+            <p class="lineup-head in in-r d1">Team</p>
+            <ol class="lineup-list">
+              <li class="plate">
+                <span class="plate-name">JT Lu-Morris</span>
+              </li>
+              <li class="plate">
+                <span class="plate-name">Raphael Rosset</span>
+              </li>
+              <li class="plate">
+                <span class="plate-name">Matt Turner</span>
+              </li>
+              <li class="plate">
+                <span class="plate-name">Sid Chowdhury</span>
+              </li>
+              <li class="plate">
+                <span class="plate-name">Bowden Eley</span>
+              </li>
+            </ol>
+          </div>
+          <div class="slide-notes" hidden>
+            Open with a lifelong fan on week three of a hospital stay, with the
+            biggest game of the year tonight.
+          </div>
+        </section>
+
+        <!-- 2 PROBLEM -->
+        <section
+          class="slide s-problem"
+          data-title="Problem"
+          aria-label="Slide 2: Problem"
+        >
+          <header class="l3">
+            <span class="l3-kicker">Problem</span>
+            <h2 class="l3-title">Long hospital stays cut patients off</h2>
+          </header>
+          <div class="problem-grid">
+            <ol class="points">
+              <li class="point in in-l d2">
+                <span class="point-no">1</span>
+                <p>
+                  <strong>Isolation is a clinical problem:</strong> Loneliness is linked to anxiety, depression and worse recovery.
+                </p>
+              </li>
+              <li class="point in in-l d3">
+                <span class="point-no">2</span>
+                <p>
+                  <strong>Immersion already works:</strong> VR is safe and can reduce anxiety and pain.
+                </p>
+              </li>
+              <li class="point in in-l d4">
+                <span class="point-no">3</span>
+                <p>
+                  <strong>Today's options are passive:</strong> Patients can watch, but can't feel present or be heard.
+                </p>
+              </li>
+            </ol>
+            <div class="stat-wall">
+              <div class="jumbo in in-up d2">
+                <p class="jumbo-num" aria-label="33M+">
+                  <span
+                    class="seg"
+                    data-count="33"
+                    data-decimals="0"
+                    >33</span
+                  ><span class="unit">M+</span>
+                </p>
+                <p class="jumbo-label">
+                  US community hospital admissions a year
+                </p>
+              </div>
+              <div class="jumbo in in-up d4">
+                <p class="jumbo-num" aria-label="$5.9B">
+                  <span class="unit">$</span
+                  ><span
+                    class="seg"
+                    data-count="5.9"
+                    data-decimals="1"
+                    >5.9</span
+                  ><span class="unit">B</span>
+                </p>
+                <p class="jumbo-label">
+                  projected sports AR/VR market by 2032, up from $727M in 2024
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="sources">
+            Sources: AHA Fast Facts 2026; Lassen et al., European Journal of
+            Pain (2025); PMC cohort research (2025); Credence Research.
+          </p>
+          <div class="slide-notes" hidden>
+            The study covers VR in general, not our product. We have no clinical
+            data of our own yet. Full points: Hospitalized patients report more loneliness, which is linked to higher anxiety, depression and worse recovery. A 2025 meta-analysis found VR is safe and can reduce in-hospital anxiety and pain. Hospital TV, one-off sports-cart cameras and relaxation VR don't let patients feel present or be heard.
+          </div>
+        </section>
+
+        <!-- 3 UVP -->
+        <section
+          class="slide s-uvp"
+          data-title="Unique value proposition"
+          aria-label="Slide 3: Unique value proposition"
+        >
+          <header class="l3">
+            <h2 class="l3-title">Unique value proposition</h2>
+          </header>
+          <div class="uvp-left">
+            <figure class="uvp-map in in-zoom d2">
+              <img
+                src="assets/value-map.png"
+                alt="Blue ocean value map. Factors: on-site crew required, passive viewing, cost per patient, setup complexity, live authenticity, viewer control, two-way interaction, AR overlays, synced presence. Courtside Connect scores low on the first four and high on the last five, compared with hospital TV, a fixed sports cart camera and generic relaxation VR."
+                width="1518"
+                height="783"
+              />
+              <figcaption>
+                <svg class="ic"><use href="#i-info" /></svg>Scores are the team's
+                judgment, not measured data.
+              </figcaption>
+            </figure>
+            <p class="uvp-main in in-up d3">
+              “For hospitals serving long-stay patients who can't get to live
+              events, <strong>Courtside Connect</strong> is a patient engagement
+              platform that streams live sports from in-stadium 360 degree
+              cameras.”
+            </p>
+          </div>
+          <p class="uvp-punch in in-r d4">
+            Not only watching but feeling through connection.
+          </p>
+          <div class="slide-notes" hidden>
+            Our positioning in the market is this: “READ SCREEN”
+          </div>
+        </section>
+
+        <!-- 4 VISION -->
+        <section
+          class="slide s-vision"
+          data-title="Vision and strategy"
+          aria-label="Slide 4: Vision and strategy"
+        >
+          <header class="l3">
+            <h2 class="l3-title">Vision and strategy</h2>
+          </header>
+          <p class="vision-line in in-up d1">
+            “No fan misses the game because of a hospital bed.”
+          </p>
+          <div class="plan in in-up d3">
+            <div
+              class="plan-stages"
+              role="group"
+              aria-label="Strategy timeline. Select a stage to highlight it."
+              data-roving
+            >
+              <button class="stage" type="button" aria-pressed="false">
+                <span class="stage-year">2027</span>
+                <span class="stage-name">Prove it</span>
+                <span class="stage-text"
+                  >1 venue and 3 free pilots. 3 paid hospitals by December.</span
+                >
+              </button>
+              <button class="stage" type="button" aria-pressed="false">
+                <span class="stage-year">2028 to 2029</span>
+                <span class="stage-name">Scale in sports metros</span>
+                <span class="stage-text"
+                  >Sell to patient experience teams. 22 hospitals, 5 venues.</span
+                >
+              </button>
+              <button class="stage" type="button" aria-pressed="false">
+                <span class="stage-year">2030 and beyond</span>
+                <span class="stage-name">Expand the audience</span>
+                <span class="stage-text"
+                  >40 hospitals, 8 venues. Then military and corrections.</span
+                >
+              </button>
+            </div>
+          </div>
+          <div class="slide-notes" hidden>2027: One launch venue and 3 free hospital pilots from May. 3 paid hospitals by December. 2028 to 2029: Sell to patient experience teams, starting with long-stay units. 22 hospitals and 5 venues. 2030 and beyond: 40 hospitals and 8 venues, then military morale programs and corrections.</div>
+        </section>
+
+        <!-- 5 CUSTOMER -->
+        <section
+          class="slide s-customer"
+          data-title="Customer profile"
+          aria-label="Slide 5: Customer profile"
+        >
+          <header class="l3">
+            <span class="l3-kicker">Customer profile</span>
+            <h2 class="l3-title">Who buys and who uses</h2>
+          </header>
+          <div
+            class="cards"
+            role="group"
+            aria-label="Customer cards. Select a card to flip it."
+            data-roving
+          >
+            <button
+              class="pcard in in-up d2"
+              type="button"
+              aria-pressed="false"
+            >
+              <span class="pcard-inner">
+                <span class="pcard-face pcard-front">
+                  <span class="pcard-top"
+                    ><span class="pcard-pos">Buyer</span
+                    ><svg class="ic pcard-ic"><use href="#i-briefcase" /></svg
+                  ></span>
+                  <span class="pcard-role">Patient experience director</span>
+                  <span class="pcard-need"
+                    >Engage long-stay units within the entertainment budget.</span
+                  >
+                  <span class="pcard-hint"
+                    ><svg class="ic"><use href="#i-flip" /></svg>Flip for
+                    quote</span
+                  >
+                </span>
+                <span class="pcard-face pcard-back">
+                  <span class="pcard-top"
+                    ><span class="pcard-pos">Buyer</span
+                    ><span class="pcard-mock">Mock interview</span></span
+                  >
+                  <span class="pcard-quote"
+                    >“$20 a bed works if it fits our entertainment budget. Start
+                    with pediatrics and oncology.”</span
+                  >
+                  <span class="pcard-hint"
+                    ><svg class="ic"><use href="#i-flip" /></svg>Flip back</span
+                  >
+                </span>
+              </span>
+            </button>
+            <button
+              class="pcard in in-up d3"
+              type="button"
+              aria-pressed="false"
+            >
+              <span class="pcard-inner">
+                <span class="pcard-face pcard-front">
+                  <span class="pcard-top"
+                    ><span class="pcard-pos">User</span
+                    ><svg class="ic pcard-ic"><use href="#i-bed" /></svg
+                  ></span>
+                  <span class="pcard-role">Long-stay patient and family</span>
+                  <span class="pcard-need"
+                    >Wants to belong, not only watch.</span
+                  >
+                  <span class="pcard-hint"
+                    ><svg class="ic"><use href="#i-flip" /></svg>Flip for
+                    quote</span
+                  >
+                </span>
+                <span class="pcard-face pcard-back">
+                  <span class="pcard-top"
+                    ><span class="pcard-pos">User</span
+                    ><span class="pcard-mock">Mock interview</span></span
+                  >
+                  <span class="pcard-quote"
+                    >“He didn't just want to watch. He wanted his team to know
+                    he was there.”</span
+                  >
+                  <span class="pcard-hint"
+                    ><svg class="ic"><use href="#i-flip" /></svg>Flip back</span
+                  >
+                </span>
+              </span>
+            </button>
+            <button
+              class="pcard in in-up d4"
+              type="button"
+              aria-pressed="false"
+            >
+              <span class="pcard-inner">
+                <span class="pcard-face pcard-front">
+                  <span class="pcard-top"
+                    ><span class="pcard-pos">Gatekeeper</span
+                    ><svg class="ic pcard-ic"><use href="#i-shield" /></svg
+                  ></span>
+                  <span class="pcard-role">Nurses on the unit</span>
+                  <span class="pcard-need"
+                    >Must be simple and infection safe.</span
+                  >
+                  <span class="pcard-hint"
+                    ><svg class="ic"><use href="#i-flip" /></svg>Flip for
+                    quote</span
+                  >
+                </span>
+                <span class="pcard-face pcard-back">
+                  <span class="pcard-top"
+                    ><span class="pcard-pos">Gatekeeper</span
+                    ><span class="pcard-mock">Mock interview</span></span
+                  >
+                  <span class="pcard-quote"
+                    >“Kids on long stays get withdrawn by week two. Anything on
+                    their face must be wipeable.”</span
+                  >
+                  <span class="pcard-hint"
+                    ><svg class="ic"><use href="#i-flip" /></svg>Flip back</span
+                  >
+                </span>
+              </span>
+            </button>
+          </div>
+          <p class="disclaimer in in-up d5">
+            <svg class="ic"><use href="#i-info" /></svg>Quotes are from our mock
+            expert interviews, not yet real customers.
+          </p>
+          <div class="slide-notes" hidden>Buyer wants to engage long-stay units within an existing entertainment budget. User is a fan who can't get to live events and wants to belong, not only to watch. Nurses hand out and clean the headsets, so it must be simple and infection safe.</div>
+        </section>
+
+        <!-- 6 SOLUTION -->
+        <section
+          class="slide s-solution"
+          data-title="Solution"
+          aria-label="Slide 6: Solution"
+        >
+          <header class="l3">
+            <span class="l3-kicker">Solution</span>
+            <h2 class="l3-title">A seat in the stadium, from bed</h2>
+          </header>
+          <svg class="signal-path" viewBox="0 0 1920 1080" aria-hidden="true">
+            <path
+              class="sig-base"
+              d="M480 360 C 580 260, 740 260, 840 360 L 1080 360 C 1180 260, 1340 260, 1440 360"
+            />
+            <path
+              class="sig-glow"
+              d="M480 360 C 580 260, 740 260, 840 360 L 1080 360 C 1180 260, 1340 260, 1440 360"
+              pathLength="100"
+            />
+          </svg>
+          <span class="signal-dot" aria-hidden="true"></span>
+          <div
+            class="nodes"
+            role="group"
+            aria-label="Signal path. Select a stage to highlight it."
+            data-roving
+          >
+            <button class="node" type="button" aria-pressed="false">
+              <span class="node-pad">
+                <svg class="node-art" viewBox="0 0 240 220" aria-hidden="true">
+                  <rect
+                    x="20"
+                    y="150"
+                    width="200"
+                    height="14"
+                    rx="4"
+                    fill="#0B1826"
+                  />
+                  <rect
+                    x="34"
+                    y="112"
+                    width="52"
+                    height="40"
+                    rx="8"
+                    fill="#B8451E"
+                  />
+                  <rect
+                    x="38"
+                    y="78"
+                    width="44"
+                    height="40"
+                    rx="8"
+                    fill="#F0A07A"
+                  />
+                  <rect
+                    x="96"
+                    y="112"
+                    width="52"
+                    height="40"
+                    rx="8"
+                    fill="#B8451E"
+                  />
+                  <rect
+                    x="100"
+                    y="78"
+                    width="44"
+                    height="40"
+                    rx="8"
+                    fill="#F0A07A"
+                  />
+                  <rect x="186" y="40" width="8" height="124" fill="#F6F3EC" />
+                  <circle
+                    cx="190"
+                    cy="34"
+                    r="20"
+                    fill="#12263A"
+                    stroke="#F6F3EC"
+                    stroke-width="5"
+                  />
+                  <circle cx="190" cy="34" r="8" fill="#1B7A63" />
+                  <rect
+                    x="168"
+                    y="96"
+                    width="16"
+                    height="26"
+                    rx="3"
+                    fill="#1B7A63"
+                  />
+                  <rect
+                    x="40"
+                    y="172"
+                    width="160"
+                    height="28"
+                    rx="4"
+                    fill="#F6F3EC"
+                  />
+                  <rect
+                    x="52"
+                    y="181"
+                    width="90"
+                    height="10"
+                    rx="2"
+                    fill="#12263A"
+                  />
+                </svg>
+              </span>
+              <span class="node-name">In the stadium</span>
+              <span class="node-text"
+                >360 degree cameras in end-of-row seats, with a speaker and mic.</span
+              >
+            </button>
+            <button class="node" type="button" aria-pressed="false">
+              <span class="node-pad">
+                <svg class="node-art" viewBox="0 0 240 220" aria-hidden="true">
+                  <rect
+                    x="30"
+                    y="14"
+                    width="180"
+                    height="196"
+                    rx="22"
+                    fill="#0B1826"
+                    stroke="#F6F3EC"
+                    stroke-width="5"
+                  />
+                  <rect
+                    x="46"
+                    y="34"
+                    width="148"
+                    height="96"
+                    rx="6"
+                    fill="#C98E5A"
+                  />
+                  <path d="M120 34v96" stroke="#F6F3EC" stroke-width="3" />
+                  <circle
+                    cx="120"
+                    cy="82"
+                    r="20"
+                    fill="none"
+                    stroke="#F6F3EC"
+                    stroke-width="3"
+                  />
+                  <rect
+                    x="52"
+                    y="40"
+                    width="62"
+                    height="18"
+                    rx="4"
+                    fill="#12263A"
+                  />
+                  <rect
+                    x="52"
+                    y="62"
+                    width="30"
+                    height="12"
+                    rx="3"
+                    fill="#B8451E"
+                  />
+                  <circle cx="158" cy="49" r="8" fill="#B8451E" />
+                  <circle cx="180" cy="49" r="8" fill="#F6F3EC" />
+                  <rect
+                    x="46"
+                    y="142"
+                    width="100"
+                    height="22"
+                    rx="11"
+                    fill="#1B7A63"
+                  />
+                  <rect
+                    x="94"
+                    y="172"
+                    width="100"
+                    height="22"
+                    rx="11"
+                    fill="#F0A07A"
+                  />
+                </svg>
+                <span class="concept concept-node">Concept</span>
+              </span>
+              <span class="node-name">On the app</span>
+              <span class="node-text"
+                >Live feed, AR chat, scoreboard and camera angles.</span
+              >
+            </button>
+            <button class="node" type="button" aria-pressed="false">
+              <span class="node-pad">
+                <svg class="node-art" viewBox="0 0 240 220" aria-hidden="true">
+                  <rect
+                    x="16"
+                    y="70"
+                    width="12"
+                    height="130"
+                    rx="4"
+                    fill="#F6F3EC"
+                  />
+                  <rect
+                    x="212"
+                    y="120"
+                    width="12"
+                    height="80"
+                    rx="4"
+                    fill="#F6F3EC"
+                  />
+                  <rect x="22" y="150" width="196" height="16" fill="#F6F3EC" />
+                  <rect
+                    x="30"
+                    y="126"
+                    width="186"
+                    height="26"
+                    rx="8"
+                    fill="#D9D3C4"
+                  />
+                  <ellipse cx="62" cy="120" rx="30" ry="16" fill="#F6F3EC" />
+                  <circle cx="76" cy="104" r="24" fill="#F0A07A" />
+                  <rect
+                    x="56"
+                    y="92"
+                    width="44"
+                    height="22"
+                    rx="10"
+                    fill="#12263A"
+                    stroke="#F6F3EC"
+                    stroke-width="3"
+                  />
+                  <rect
+                    x="62"
+                    y="98"
+                    width="32"
+                    height="10"
+                    rx="5"
+                    fill="#1B7A63"
+                  />
+                  <rect
+                    x="96"
+                    y="108"
+                    width="120"
+                    height="34"
+                    rx="16"
+                    fill="#1B7A63"
+                  />
+                </svg>
+              </span>
+              <span class="node-name">At the bedside</span>
+              <span class="node-text"
+                >Wipeable Quest 3S headsets from nurses, plus TV mode.</span
+              >
+            </button>
+          </div>
+          <div class="biz in in-up d5">
+            <span class="biz-tag">Business model</span>
+            <p>
+              Hospitals pay $40 per bed per month. Teams and venues reach new fans.
+            </p>
+          </div>
+          <div class="slide-notes" hidden>Stadium: end-of-row 360 degree camera poles in designated seats, with a speaker, mic and fan signage. App: the live feed with AR chat, a scoreboard and switchable camera angles. Bedside: a shared pool of wipeable Quest 3S headsets checked out by nurses, plus TV mode for everyone else. Hospitals subscribe per bed, at $40 per bed per month. Teams and venues gain a new way to reach fans.</div>
+        </section>
+
+        <!-- 7 VVP -->
+        <section
+          class="slide s-vvp"
+          data-title="Visual value proposition"
+          aria-label="Slide 7: Visual value proposition"
+        >
+          <header class="l3">
+            <h2 class="l3-title">Visual value proposition</h2>
+          </header>
+          <figure class="vvp-frame in in-zoom d2">
+            <div class="vvp-img">
+              <img
+                src="assets/vvp.png"
+                alt="Concept illustration: a patient in a hospital bed wearing a headset watches a live game on a screen showing a 54 to 52 Q3 scoreboard and camera angles 1, 2 and 3, while a crowd of fans cheers. Labels read Live stats in AR, Pick your angle, From their bed, and Cheer together."
+                width="2463"
+                height="1017"
+              />
+            </div>
+            <figcaption class="concept concept-corner">Concept</figcaption>
+          </figure>
+        </section>
+
+        <!-- 8 COMPETITIVE -->
+        <section
+          class="slide s-comp"
+          data-title="Competitive analysis"
+          aria-label="Slide 8: Competitive analysis"
+        >
+          <header class="l3">
+            <h2 class="l3-title">Competitive analysis</h2>
+          </header>
+          <div class="board in in-up d2">
+            <table class="comp" data-sel="0">
+<caption class="sr-only">Competitive analysis. Select a competitor to highlight its column.</caption>
+<colgroup><col class="comp-col-label" /><col /><col /><col /><col /><col /></colgroup>
+<thead>
+<tr class="comp-groups"><td></td><th scope="colgroup">Us</th><th scope="colgroup" colspan="2">Care settings</th><th scope="colgroup" colspan="2">Consumer headsets</th></tr>
+<tr><td></td>
+<th scope="col" data-col="0"><button type="button" class="comp-head" aria-pressed="true"><span>Courtside</span><small>Design intent</small></button></th>
+<th scope="col" data-col="1"><button type="button" class="comp-head" aria-pressed="false"><span>Rendever</span><small>Senior-care VR</small></button></th>
+<th scope="col" data-col="2"><button type="button" class="comp-head" aria-pressed="false"><span>Get Well</span><small>Bedside TV</small></button></th>
+<th scope="col" data-col="3"><button type="button" class="comp-head" aria-pressed="false"><span>Vision Pro</span><small>Apple</small></button></th>
+<th scope="col" data-col="4"><button type="button" class="comp-head" aria-pressed="false"><span>Quest + Xtadium</span><small>Meta</small></button></th>
+</tr>
+</thead>
+<tbody>
+<tr class="comp-section"><th scope="colgroup" colspan="6">Experience</th></tr>
+<tr><th scope="row">Live sports</th><td data-col="0" data-r="full"><span class="sr-only">Full: </span>Live, interactive</td><td data-col="1" data-r="none"><span class="sr-only">None: </span>Wellness content</td><td data-col="2" data-r="part"><span class="sr-only">Partial: </span>Passive TV</td><td data-col="3" data-r="part"><span class="sr-only">Partial: </span>Select Lakers games</td><td data-col="4" data-r="part"><span class="sr-only">Partial: </span>52 NBA games a season</td></tr>
+<tr><th scope="row">Talk and chat</th><td data-col="0" data-r="full"><span class="sr-only">Full: </span>Mic, speaker, chat</td><td data-col="1" data-r="full"><span class="sr-only">Full: </span>Shared VR sessions</td><td data-col="2" data-r="part"><span class="sr-only">Partial: </span>Care-team messages</td><td data-col="3" data-r="none">None</td><td data-col="4" data-r="none">None</td></tr>
+<tr><th scope="row">Angles and AR</th><td data-col="0" data-r="full"><span class="sr-only">Full: </span>Angles, AR overlays</td><td data-col="1" data-r="none"><span class="sr-only">None: </span>None listed</td><td data-col="2" data-r="none">None</td><td data-col="3" data-r="full"><span class="sr-only">Full: </span>Multiview</td><td data-col="4" data-r="part"><span class="sr-only">Partial: </span>Single 180 degree feed</td></tr>
+<tr class="comp-section"><th scope="colgroup" colspan="6">Hospital fit</th></tr>
+<tr><th scope="row">For hospitals</th><td data-col="0" data-r="full">Full</td><td data-col="1" data-r="full"><span class="sr-only">Full: </span>Senior living, hospitals</td><td data-col="2" data-r="full"><span class="sr-only">Full: </span>Bedside TV</td><td data-col="3" data-r="none"><span class="sr-only">None: </span>Consumer</td><td data-col="4" data-r="none"><span class="sr-only">None: </span>Consumer</td></tr>
+<tr><th scope="row">Cost per patient</th><td data-col="0" data-r="part"><span class="sr-only">Partial: </span>$40/bed/mo, shared kit</td><td data-col="1" data-r="part"><span class="sr-only">Partial: </span>$1,000 kit + $300 to $400/mo</td><td data-col="2" data-r="na">Not published</td><td data-col="3" data-r="none"><span class="sr-only">None: </span>$3,499 headset</td><td data-col="4" data-r="part"><span class="sr-only">Partial: </span>Headset, free games</td></tr>
+<tr class="comp-total"><th scope="row">Score out of 5</th><td data-col="0" data-score="4.5"><span class="seg">4.5</span></td><td data-col="1" data-score="2.5"><span class="seg">2.5</span></td><td data-col="2" data-score="2.0"><span class="seg">2.0</span></td><td data-col="3" data-score="1.5"><span class="seg">1.5</span></td><td data-col="4" data-score="1.5"><span class="seg">1.5</span></td></tr>
+</tbody>
+</table>
+          </div>
+          <div class="comp-foot">
+<p class="comp-legend"><span data-r="full">Full</span><span data-r="part">Partial</span><span data-r="none">None</span><span data-r="na">Not published</span></p>
+<p>
+              Full = 1, partial = 0.5, none = 0. Rendever price is 2020 data.
+              Courtside column is design intent, not a shipped product.
+            </p>
+            <p class="sources">
+              Sources: Rendever, SPEEDA, URMC, Tom's Guide, UploadVR.
+            </p>
+          </div>
+          <div class="slide-notes" hidden>Full table wording: Courtside Connect is design intent. Rendever is senior-care VR and Get Well is bedside TV. Apple Vision Pro carries select Lakers games. Meta Quest + Xtadium carries 52 NBA games a season on a single 180 degree feed.</div>
+        </section>
+
+        <!-- 9 TAM SAM SOM -->
+        <section
+          class="slide s-market"
+          data-title="TAM, SAM and SOM"
+          aria-label="Slide 9: TAM, SAM and SOM"
+        >
+          <header class="l3">
+            <h2 class="l3-title">TAM, SAM and SOM</h2>
+          </header>
+          <div class="market">
+            <figure class="tiers">
+              <svg viewBox="0 0 760 600" aria-hidden="true">
+                <g class="tier tier-1">
+                  <ellipse cx="380" cy="300" rx="364" ry="276" />
+                  <text x="380" y="70">TAM</text>
+                </g>
+                <g class="tier tier-2">
+                  <ellipse cx="380" cy="322" rx="252" ry="190" />
+                  <text x="380" y="190">SAM</text>
+                </g>
+                <g class="tier tier-3"><circle cx="380" cy="360" r="74" /><text x="380" y="372">SOM</text></g>
+              </svg>
+              <figcaption>Rings show nesting only. Not to scale.</figcaption>
+            </figure>
+            <dl class="mkt">
+              <div class="mkt-row mkt-1 in in-r d2">
+                <dt>
+                  <span class="mkt-key">TAM</span
+                  ><span class="mkt-val"
+                    ><span class="unit">$</span
+                    ><span class="seg">31.9</span
+                    ><span class="unit">B</span></span
+                  >
+                </dt>
+                <dd>Global live sports streaming market, 2025 (third-party estimate)</dd>
+              </div>
+              <div class="mkt-row mkt-2 in in-r d4">
+                <dt>
+                  <span class="mkt-key">SAM</span
+                  ><span class="mkt-val"
+                    ><span class="unit">$</span
+                    ><span class="seg">372</span
+                    ><span class="unit">M</span></span
+                  >
+                </dt>
+                <dd>
+                  775,297 community hospital beds x $480 a year
+                </dd>
+              </div>
+              <div class="mkt-row mkt-3 in in-r d6">
+                <dt>
+                  <span class="mkt-key">SOM</span
+                  ><span class="mkt-val"
+                    ><span class="unit">$</span
+                    ><span class="seg">1.92</span
+                    ><span class="unit">M</span></span
+                  >
+                </dt>
+                <dd>
+                  40 hospitals x 100 beds x $480 a year by 2030, about 0.5% of SAM
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <p class="sources">
+            Sources: The Business Research Company, Sports Online Live Video Streaming Global Market Report 2026; AHA Fast Facts on U.S. Hospitals 2026; team pro forma. $480
+            per year is $40 per bed per month.
+          </p>
+          <div class="slide-notes" hidden>
+            TAM is the worldwide live sports streaming market: $31.86B in 2025, a third-party estimate that also counts smart TV and content delivery sales. It sizes the viewing market, not what we can sell to hospitals. Our bottom-up ceiling is 907,216 staffed US hospital beds x $480 per year = $435M, which assumes every staffed bed subscribes, and that will not happen. SAM and SOM use $480 per bed per year. SAM excludes federal and psychiatric hospitals. SOM is 40 hospitals x 100 long-stay beds by Dec 2030.
+          </div>
+        </section>
+
+        <!-- 10 UNIT ECONOMICS -->
+        <section
+          class="slide s-unit"
+          data-title="Unit economics"
+          aria-label="Slide 10: Unit economics and what must be true"
+        >
+          <header class="l3">
+            <h2 class="l3-title">Unit economics and what must be true</h2>
+          </header>
+          <div class="unit-top">
+            <div class="ledger in in-l d2">
+              <p class="panel-label">Per hospital, per year</p>
+              <dl>
+                <div>
+                  <dt>100 beds x $40 x 12 months</dt>
+                  <dd>$48,000</dd>
+                </div>
+                <div>
+                  <dt>Content rights (placeholder)</dt>
+                  <dd class="neg">($9,600)</dd>
+                </div>
+                <div>
+                  <dt>Streaming and hosting</dt>
+                  <dd class="neg">($1,800)</dd>
+                </div>
+                <div class="ledger-total">
+                  <dt>Contribution</dt>
+                  <dd>$36,600 (76%)</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="console in in-up d3" id="calc">
+              <div class="console-controls">
+                <p class="panel-label">Breakeven calculator</p>
+                <div class="fader">
+                  <label for="calc-price">Price per bed per month</label>
+                  <output id="calc-price-out" for="calc-price">$40</output>
+                  <input
+                    type="range"
+                    id="calc-price"
+                    min="20"
+                    max="60"
+                    step="1"
+                    value="40"
+                  />
+                  <span class="fader-scale"
+                    ><span>$20</span><span>$60</span></span
+                  >
+                </div>
+                <div class="fader">
+                  <label for="calc-rights"
+                    >Content rights per hospital per month</label
+                  >
+                  <output id="calc-rights-out" for="calc-rights">$800</output>
+                  <input
+                    type="range"
+                    id="calc-rights"
+                    min="400"
+                    max="2000"
+                    step="50"
+                    value="800"
+                  />
+                  <span class="fader-scale"
+                    ><span>$400</span><span>$2,000</span></span
+                  >
+                </div>
+                <button type="button" class="btn-reset" id="calc-reset">
+                  <svg class="ic"><use href="#i-rotate" /></svg>Reset
+                </button>
+              </div>
+              <div class="console-board">
+                <p class="panel-label">Breakeven hospitals</p>
+                <div class="board-num" aria-live="polite">
+                  <span class="seg" id="calc-be">46</span
+                  ><span class="board-never" id="calc-never" hidden
+                    >Never breaks even</span
+                  >
+                </div>
+                <p class="console-note">
+                  Illustrative. Holds the 2030 fixed cost base of $1.657M
+                  constant.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="risks">
+            <div class="risk in in-up d4">
+              <p class="risk-name">
+                <svg class="ic"><use href="#i-alert" /></svg>Content rights
+              </p>
+              <p>
+                $800 per hospital per month is a placeholder.
+              </p>
+            </div>
+            <div class="risk in in-up d5">
+              <p class="risk-name">
+                <svg class="ic"><use href="#i-alert" /></svg>Price
+              </p>
+              <p>
+                At $20 a bed, breakeven is about 132 hospitals.
+              </p>
+            </div>
+            <div class="risk in in-up d6">
+              <p class="risk-name">
+                <svg class="ic"><use href="#i-alert" /></svg>Sales speed
+              </p>
+              <p>
+                We assume 10 months. Hospitals often take 6 to 18.
+              </p>
+            </div>
+          </div>
+          <p class="sources">
+            Sources: team pro forma; hospital sales cycle benchmarks from
+            Stacker and PulseRevOps.
+          </p>
+          <div class="slide-notes" hidden>$800 per hospital per month is a placeholder until we have a real quote. $20 is the price our mock buyer named. We assume 10 months to the first paid deal; hospital sales cycles often run 6 to 18 months.</div>
+        </section>
+
+        <!-- 11 PRO FORMA -->
+        <section
+          class="slide s-proforma"
+          data-title="Pro forma summary"
+          aria-label="Slide 11: Pro forma summary"
+        >
+          <header class="l3">
+            <h2 class="l3-title">Pro forma summary</h2>
+          </header>
+          <div class="pf-controls">
+            <span
+              class="pf-view"
+              role="group"
+              aria-label="Pro forma view"
+              data-roving
+            >
+              <button
+                type="button"
+                class="seg-btn"
+                id="pf-table-btn"
+                aria-pressed="true"
+              >
+                <svg class="ic"><use href="#i-table" /></svg>Table
+              </button>
+              <button
+                type="button"
+                class="seg-btn"
+                id="pf-chart-btn"
+                aria-pressed="false"
+              >
+                <svg class="ic"><use href="#i-chart" /></svg>Chart
+              </button>
+            </span>
+            <span
+              class="pf-series"
+              id="pf-series"
+              role="group"
+              aria-label="Chart series"
+              hidden
+              data-roving
+            >
+              <button
+                type="button"
+                class="seg-btn"
+                data-series="revenue"
+                aria-pressed="true"
+              >
+                Revenue
+              </button>
+              <button
+                type="button"
+                class="seg-btn"
+                data-series="ebitda"
+                aria-pressed="false"
+              >
+                EBITDA
+              </button>
+              <button
+                type="button"
+                class="seg-btn"
+                data-series="cash"
+                aria-pressed="false"
+              >
+                Cumulative cash need
+              </button>
+            </span>
+          </div>
+          <div class="statsboard in in-up d2">
+            <table class="pf" id="pf-table">
+              <caption class="sr-only">
+                Pro forma summary by year, 2027 to 2030
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Metric</span></th>
+                  <th scope="col">
+                    <span class="seg">2027</span>
+                  </th>
+                  <th scope="col">
+                    <span class="seg">2028</span>
+                  </th>
+                  <th scope="col">
+                    <span class="seg">2029</span>
+                  </th>
+                  <th scope="col">
+                    <span class="seg">2030</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Paid hospitals</th>
+                  <td>3</td>
+                  <td>10</td>
+                  <td>22</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <th scope="row">Year-end ARR</th>
+                  <td>$144K</td>
+                  <td>$480K</td>
+                  <td>$1.06M</td>
+                  <td>$1.92M</td>
+                </tr>
+                <tr>
+                  <th scope="row">Revenue</th>
+                  <td>$28K</td>
+                  <td>$330K</td>
+                  <td>$798K</td>
+                  <td>$1.53M</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gross margin</th>
+                  <td class="neg">-12%</td>
+                  <td class="pos">70%</td>
+                  <td class="pos">71%</td>
+                  <td class="pos">72%</td>
+                </tr>
+                <tr>
+                  <th scope="row">EBITDA</th>
+                  <td class="neg">($419K)</td>
+                  <td class="neg">($703K)</td>
+                  <td class="neg">($619K)</td>
+                  <td class="neg">($459K)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cumulative cash need</th>
+                  <td class="neg">($470K)</td>
+                  <td class="neg">($1.29M)</td>
+                  <td class="neg">($2.10M)</td>
+                  <td class="neg">($2.85M)</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="pf-chart" id="pf-chart" hidden>
+              <svg
+                id="pf-svg"
+                viewBox="0 0 1600 620"
+                role="img"
+                aria-labelledby="pf-svg-title"
+              >
+                <title id="pf-svg-title">Chart</title>
+              </svg>
+            </figure>
+          </div>
+          <div class="slide-notes" hidden>
+            2027 margin is negative because pilots are free. Breakeven takes
+            about 46 hospitals and we finish 2030 at 40, so we plan a Series A. Also in the pro forma, 2027 to 2030. Stadium venues: 1, 3, 5, 8. Net cash flow: ($470K), ($820K), ($810K), ($754K).
+          </div>
+        </section>
+
+        <!-- 12 USE OF FUNDS -->
+        <section
+          class="slide s-funds"
+          data-title="Use of funds"
+          aria-label="Slide 12: Use of funds"
+        >
+          <header class="l3">
+            <span class="l3-kicker">Use of funds</span>
+            <h2 class="l3-title">Raising a $2.5M seed</h2>
+          </header>
+          <div class="funds">
+            <div class="funds-left">
+              <div class="raise in in-up d1">
+                <p class="raise-num" aria-label="$2.5M">
+                  <span class="unit">$</span
+                  ><span class="seg">2.5</span
+                  ><span class="unit">M</span>
+                </p>
+              </div>
+              <p class="raise-quote in in-up d3">
+                “Funds the plan through Dec '29 plus a $400K reserve, about 42
+                months of runway.”
+              </p>
+              <ol class="milestones in in-up d5">
+                <li>
+                  <span class="ms-when">May '27</span
+                  ><span>3 free pilots, first venue</span>
+                </li>
+                <li>
+                  <span class="ms-when">Dec '27</span
+                  ><span>3 paid hospitals, $144K ARR</span>
+                </li>
+                <li>
+                  <span class="ms-when">Dec '28</span
+                  ><span>10 paid hospitals, $480K ARR</span>
+                </li>
+                <li>
+                  <span class="ms-when">Dec '29</span
+                  ><span>22 paid hospitals, $1.06M ARR</span>
+                </li>
+              </ol>
+            </div>
+            <ul class="bars">
+              <li class="bar" data-amount="705">
+                <span class="bar-head"
+                  ><span class="bar-name">Sales and customer success</span
+                  ><span class="bar-amt"
+                    >$705K <small>(28.2%)</small></span
+                  ></span
+                ><span class="bar-track"><span class="bar-fill"></span></span
+                >
+              </li>
+              <li class="bar" data-amount="546">
+                <span class="bar-head"
+                  ><span class="bar-name">Product and engineering</span
+                  ><span class="bar-amt"
+                    >$546K <small>(21.8%)</small></span
+                  ></span
+                ><span class="bar-track"><span class="bar-fill"></span></span
+                >
+              </li>
+              <li class="bar" data-amount="509">
+                <span class="bar-head"
+                  ><span class="bar-name">Founders, compliance and ops</span
+                  ><span class="bar-amt"
+                    >$509K <small>(20.4%)</small></span
+                  ></span
+                ><span class="bar-track"><span class="bar-fill"></span></span
+                >
+              </li>
+              <li class="bar" data-amount="180">
+                <span class="bar-head"
+                  ><span class="bar-name">Stadium and headset hardware</span
+                  ><span class="bar-amt"
+                    >$180K <small>(7.2%)</small></span
+                  ></span
+                ><span class="bar-track"><span class="bar-fill"></span></span
+                >
+              </li>
+              <li class="bar" data-amount="160">
+                <span class="bar-head"
+                  ><span class="bar-name">Sports content rights (placeholder)</span
+                  ><span class="bar-amt"
+                    >$160K <small>(6.4%)</small></span
+                  ></span
+                ><span class="bar-track"><span class="bar-fill"></span></span
+                >
+              </li>
+              <li class="bar bar-reserve" data-amount="400">
+                <span class="bar-head"
+                  ><span class="bar-name">Cash reserve</span
+                  ><span class="bar-amt"
+                    >$400K <small>(16.0%)</small></span
+                  ></span
+                ><span class="bar-track"><span class="bar-fill"></span></span
+                >
+              </li>
+            </ul>
+          </div>
+          <p class="funds-foot">
+            Spend is shown net of $979K in hospital receipts through 2029
+            ($3.08M gross). A Series A is needed before mid-2030.
+          </p>
+          <p class="closer">
+            <span>A fan in a hospital bed gets to be there tonight.</span>
+          </p>
+          <div class="slide-notes" hidden>
+            “We're raising $2.5M. $2.1M funds the plan through 2029, and $400K
+            is our cushion. That takes us to about mid-2030, and by then we'd be
+            raising a Series A with about $1M in annual recurring revenue. All
+            of this is so a fan in a hospital bed can be there tonight, and
+            their team knows it.” Line detail. Sales and customer success: 1 to 3 reps, clinical liaison, conferences. Product and engineering: Engineers, MVP build, streaming and hosting. Founders, compliance and ops: HIPAA, SOC 2, insurance, legal. Stadium and headset hardware: Camera kits at 5 venues, Quest 3S, venue ops. Sports content rights: $800 per hospital per month, placeholder. Cash reserve: Slower hospital sales or higher rights costs.
+          </div>
+        </section>
+      </main>
+
+      <aside id="notes" aria-label="Speaker notes" hidden>
+        <p class="notes-label">Speaker notes <span id="notes-slide"></span></p>
+        <p id="notes-text"></p>
+      </aside>
+
+      <div
+        id="overview"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Slide overview"
+        hidden
+      >
+        <div class="ov-head">
+          <p class="ov-title">Slide overview</p>
+          <button type="button" class="ov-btn" id="ov-intro">
+            <svg class="ic"><use href="#i-play" /></svg>Replay tip-off
+          </button>
+          <button
+            type="button"
+            class="ov-btn"
+            id="ov-close"
+            aria-label="Close overview"
+          >
+            <svg class="ic"><use href="#i-x" /></svg>
+          </button>
+        </div>
+        <div class="ov-grid" id="ov-grid"></div>
+      </div>
+
+      <div id="chrome">
+        <div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+        <nav class="controls" aria-label="Presentation controls">
+          <button
+            type="button"
+            class="ctl"
+            id="btn-prev"
+            aria-label="Previous slide"
+          >
+            <svg class="ic"><use href="#i-chev-left" /></svg>
+          </button>
+          <span class="counter" id="counter" aria-live="polite">01 / 12</span>
+          <button
+            type="button"
+            class="ctl"
+            id="btn-next"
+            aria-label="Next slide"
+          >
+            <svg class="ic"><use href="#i-chev-right" /></svg>
+          </button>
+          <span class="ctl-sep"></span>
+          <button
+            type="button"
+            class="ctl"
+            id="btn-notes"
+            aria-label="Speaker notes (N)"
+            aria-pressed="false"
+          >
+            <svg class="ic"><use href="#i-notes" /></svg>
+          </button>
+          <button
+            type="button"
+            class="ctl"
+            id="btn-overview"
+            aria-label="Slide overview (O)"
+          >
+            <svg class="ic"><use href="#i-grid" /></svg>
+          </button>
+          <button
+            type="button"
+            class="ctl"
+            id="btn-sound"
+            aria-label="Arena sound (M)"
+            aria-pressed="false"
+          >
+            <svg class="ic"><use href="#i-vol-x" /></svg>
+          </button>
+          <button
+            type="button"
+            class="ctl"
+            id="btn-full"
+            aria-label="Fullscreen (F)"
+          >
+            <svg class="ic"><use href="#i-max" /></svg>
+          </button>
+        </nav>
+      </div>
+
+      <p id="toast" role="status" hidden></p>
+    </div>
+
+    <script src="js/deck.js"></script>
+  </body>
+</html>

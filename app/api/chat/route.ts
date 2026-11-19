@@ -16,6 +16,7 @@ import {
   profile,
   skills,
 } from "@/data/content";
+import { caseStudies } from "@/data/caseStudies";
 
 export const maxDuration = 30;
 
@@ -32,6 +33,7 @@ function buildSystemPrompt() {
     academicProjects,
     education,
     skills,
+    productCaseStudies: caseStudies,
   };
 
   return [

@@ -6,18 +6,19 @@ photos, and a way to reach out.
 
 ## Apps
 
-| App               | What it shows                                                            |
-| ----------------- | ------------------------------------------------------------------------ |
-| About             | Bio, quick facts, interests, languages                                   |
-| Work              | Founding & leadership, internships, academic research                    |
-| Education         | USC (Marshall + Iovine and Young Academy) and Eden Prairie High School   |
-| Organizations     | EP Venture Fund, Junior Sharks, DECA                                     |
-| Photos            | Photography                                                              |
-| Mentors           | People who shaped the work above                                         |
-| Mail              | Direct ways to get in touch                                              |
-| Ask Sid           | An AI assistant that answers questions using only the facts on this site |
-| Resume            | Opens the PDF resume                                                     |
-| GitHub / LinkedIn | External links, open in a new tab                                        |
+| App               | What it shows                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| Product           | Product case studies (ACAD 183 portfolio): Courtside Connect, Veil, Patientce, Huddle |
+| About             | Bio, quick facts, interests, languages                                                |
+| Work              | Founding & leadership, internships, academic research                                 |
+| Education         | USC (Marshall + Iovine and Young Academy) and Eden Prairie High School                |
+| Organizations     | EP Venture Fund, Junior Sharks, DECA                                                  |
+| Photos            | Photography                                                                           |
+| Mentors           | People who shaped the work above                                                      |
+| Mail              | Direct ways to get in touch                                                           |
+| Ask Sid           | An AI assistant that answers questions using only the facts on this site              |
+| Resume            | Opens the PDF resume                                                                  |
+| GitHub / LinkedIn | External links, open in a new tab                                                     |
 
 ## Tech stack
 
