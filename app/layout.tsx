@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sid Chowdhury",
   description:
-    "Sid Chowdhury: incoming USC Iovine and Young / Marshall student, co-founder of EP Venture Fund. Browse the site as an interactive iPad.",
+    "Sid Chowdhury: USC Iovine and Young / Marshall student and co-founder of EP Venture Fund. Product case studies, ventures, and experience.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

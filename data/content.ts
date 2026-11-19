@@ -265,12 +265,12 @@ export const experience: ExperienceEntry[] = [
     org: "Bidwell Investment Group",
     role: "Hedge Fund Intern",
     location: "Minneapolis, MN",
-    dates: "May 2025 - Aug 2025",
+    dates: "Jul 2025 - Sep 2025",
     active: false,
     bullets: [
-      "Managed a live $10,000 portfolio to a 27.8% return over 12 weeks across 18 trades, using Bollinger Bands, RSI, Fibonacci retracements, and options strategies.",
-      "Executed one options trade that returned 450%, driven by analysis of volatility, pricing, and risk-reward dynamics.",
-      "Researched 55 public equities using comparable-company analyses and 10-K/10-Q review, presenting theses to senior investors that led to 18 companies advancing to active trading.",
+      "Managed a live $10K portfolio across 18 trades using technical analysis and options, returning 27.8% over 12 weeks.",
+      "Executed an options trade that returned 450%, based on analysis of volatility, pricing and risk-reward.",
+      "Researched 55 public equities through comps and 10-K/10-Q review; 18 theses advanced to active trading.",
     ],
   },
   {
@@ -280,9 +280,19 @@ export const experience: ExperienceEntry[] = [
     dates: "Jun 2025 - Jul 2025",
     active: false,
     bullets: [
-      "Selected as 1 of 6 Minnesota interns from 150 regional applicants, a 4% acceptance rate, among 600+ nationwide candidates at the nation's 8th-largest accounting and consulting firm.",
-      "Rotated through Wealth Advisory, Digital/Cybersecurity, Audit, and Tax: client meetings, portfolio analysis, audit procedures, multi-state tax research, and cybersecurity risk assessments.",
-      "Led financial modeling for a pro bono case with the Black Men Teach nonprofit, building multi-year budget projections presented to C-suite executives in a nationwide intern competition.",
+      "Prepared 12 tax filings and planning analyses for 8 clients using financial statement review and Excel modeling.",
+      "Built 5-year budget projections for nonprofit Black Men Teach on a $50K budget and presented to 4 CLA executives, winning first place in a national intern competition.",
+    ],
+  },
+  {
+    org: "FinMark Capital",
+    role: "Wealth Management Intern",
+    location: "Dubai, UAE",
+    dates: "Jun 2024 - Jul 2024",
+    active: false,
+    bullets: [
+      "Supported investment analysis across 10 client portfolios representing $70M+ in assets at a DFSA-regulated firm.",
+      "Developed 6 customized investment proposals across equities, fixed income, and alternative investments, 4 adopted by clients.",
     ],
   },
 ];
