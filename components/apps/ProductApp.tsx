@@ -24,7 +24,7 @@ function CaseList({ onOpen }: { onOpen: (study: CaseStudy) => void }) {
         Product work
       </h1>
       <p className="mt-1 text-sm text-zinc-500">
-        Four products: the problem, who it&apos;s for, the calls I made, and
+        Five projects: the problem, who it&apos;s for, the calls I made, and
         what the numbers say. Tap one.
       </p>
 
@@ -62,7 +62,7 @@ function CaseList({ onOpen }: { onOpen: (study: CaseStudy) => void }) {
       </div>
 
       <p className="mt-6 text-[13px] leading-relaxed text-zinc-500">
-        Ventures I started (EP Venture Fund, Junior Sharks, DECA) live in the
+        Junior Sharks and DECA live in the
         Ventures app.
       </p>
 

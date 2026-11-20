@@ -6,7 +6,7 @@ import { FileText } from "lucide-react";
 
 const links = [
   { label: "Experience", href: "/#experience" },
-  { label: "Work", href: "/#work" },
+  { label: "Projects", href: "/#work" },
   { label: "Ventures", href: "/#ventures" },
   { label: "Contact", href: "/#contact" },
 ];

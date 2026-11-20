@@ -237,8 +237,8 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <SectionHeader
-                eyebrow="Product work"
-                title="Four products, from problem to pitch"
+                eyebrow="Projects"
+                title="Five projects, from problem to pitch"
                 blurb="Each one has the problem, who it's for, the calls we made, and the numbers, with sources. Where we don't know something yet, it says so."
               />
             </FadeIn>
@@ -291,7 +291,7 @@ export default function Home() {
               </Link>
             </FadeIn>
 
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
               {rest.map((study, i) => (
                 <FadeIn key={study.id} delay={0.05 * (i + 1)}>
                   <Link
@@ -350,7 +350,9 @@ export default function Home() {
             </FadeIn>
 
             <div className="mt-12 divide-y divide-zinc-800 border-y border-zinc-800">
-              {ventures.map((venture) => (
+              {ventures
+                .filter((venture) => venture.id !== "epvf")
+                .map((venture) => (
                 <FadeIn key={venture.id}>
                   <article className="grid gap-8 py-10 lg:grid-cols-[1fr_1.4fr]">
                     <div>

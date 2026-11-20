@@ -44,6 +44,57 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: "epvf",
+    name: "EP Venture Fund",
+    label: "Venture fund I co-founded",
+    dates: "Oct 2025 - Present",
+    role: "Co-Founder. Built the fund, ran sourcing and diligence, advise the portfolio.",
+    team: "Sid Chowdhury and Aarav Gupta",
+    hook: "Real grant money for student founders who are too young to sign for it.",
+    problem: [
+      "A sixteen-year-old with a real business can't open a bank account or sign a contract. Most programs for young founders hand out a trophy instead of money.",
+      "Capital tends to reach people through who they know. We wanted a way for a student with a working idea to get funded on the work itself.",
+    ],
+    users: [
+      "Student founder: a high schooler with a real venture who can't legally sign for money.",
+      "Foundation for Eden Prairie Schools: the fiscal sponsor that holds and pays out the grants.",
+      "Co-founders: run sourcing, diligence, and advising after the check.",
+    ],
+    built: [
+      "A fiscal sponsorship with the Foundation for Eden Prairie Schools (FEPS), so grants land in a real bank account.",
+      "Quarterly pitches and a due-diligence process for student founders.",
+      "Non-equity grants, so founders keep all of their company.",
+      "Ongoing advising on pricing, go-to-market, and unit economics for every company we fund.",
+    ],
+    decisions: [
+      {
+        title: "Run the money through the school foundation",
+        body: "Minors can't sign contracts, which was the whole problem. Routing grants through FEPS made the money real without a student ever having to sign for it.",
+      },
+      {
+        title: "Fund proof, not ideas",
+        body: "Nobody gets funded for having a good idea. You get funded for showing that somebody already wants what you're making. 22 ventures pitched and 3 were funded.",
+      },
+      {
+        title: "Stay after the check",
+        body: "Writing the check was the easy half. I advised the animation studio on go-to-market and pricing, and its average contract value rose 62% with 4 pilot clients. I designed a 15% commission model for the chef marketplace, which onboarded 18 chefs and booked 21 times.",
+      },
+    ],
+    stats: [
+      { value: "22", label: "Ventures screened" },
+      { value: "3", label: "Funded" },
+      { value: "$22,375", label: "Granted" },
+      { value: "62%", label: "Contract value lift" },
+    ],
+    statsSource:
+      "Fund records, as listed on my resume. The 62% is the animation studio's average contract value after the pricing work.",
+    limits: [
+      "The third company, an elder care coordination platform, is funded and still in build, so it has no results yet.",
+      "I'm handing the fund to my co-founder now that I'm at USC.",
+    ],
+    links: [{ label: "Fund website", href: "https://epventurefund.com" }],
+  },
+  {
     id: "courtside",
     name: "Courtside Connect",
     label: "ACAD 183 final team project",
