@@ -19,7 +19,7 @@ import {
   profile,
   ventures,
 } from "@/data/content";
-import { caseStudies } from "@/data/caseStudies";
+import { aiUseStatement, caseStudies } from "@/data/caseStudies";
 
 function SectionHeader({
   eyebrow,
@@ -211,6 +211,15 @@ export default function Home() {
                 </FadeIn>
               ))}
             </div>
+
+            <details className="group mt-10 rounded-xl border border-zinc-800 bg-zinc-900/60 px-5 py-4">
+              <summary className="cursor-pointer list-none text-sm text-zinc-400 transition-colors duration-200 hover:text-white">
+                AI use statement (ACAD 183)
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                {aiUseStatement}
+              </p>
+            </details>
           </div>
         </section>
 
