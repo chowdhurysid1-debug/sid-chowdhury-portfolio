@@ -76,10 +76,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#work"
+                href="#experience"
                 className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl bg-indigo-600 px-6 py-2.5 font-semibold text-white shadow-lg shadow-indigo-500/25 transition-all duration-200 hover:bg-indigo-500 active:bg-indigo-700"
               >
-                See my product work
+                See my experience
                 <ArrowDown className="h-4 w-4" />
               </a>
               <a
@@ -117,6 +117,119 @@ export default function Home() {
       </header>
 
       <main>
+        <section
+          id="experience"
+          className="scroll-mt-20 border-t border-zinc-900 py-20 md:py-32"
+        >
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <FadeIn>
+              <SectionHeader
+                eyebrow="Experience"
+                title="Internships, USC orgs, and research"
+              />
+            </FadeIn>
+
+            <ol className="mt-12 space-y-12">
+              {timeline.map((entry) => (
+                <li key={entry.org}>
+                  <FadeIn className="grid gap-3 md:grid-cols-[12rem_1fr] md:gap-10">
+                    <p className="font-mono text-sm text-zinc-500">
+                      {entry.dates}
+                    </p>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">
+                        {entry.org}
+                      </h3>
+                      <p className="mt-1 text-sm text-zinc-400">
+                        {entry.role} &middot; {entry.location}
+                      </p>
+                      <ul className="mt-4 space-y-2">
+                        {entry.bullets.map((bullet) => (
+                          <li
+                            key={bullet}
+                            className="flex gap-3 leading-relaxed text-zinc-300"
+                          >
+                            <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-indigo-400" />
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </FadeIn>
+                </li>
+              ))}
+            </ol>
+
+            <FadeIn>
+              <div className="mt-16 grid gap-6 md:grid-cols-2">
+                <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+                  <p className="text-xs tracking-[0.2em] text-zinc-500 uppercase">
+                    Now
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold text-white">
+                    {education.school}
+                  </h3>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    {education.program}
+                  </p>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    {education.degree}
+                  </p>
+                  <div className="mt-4 flex gap-10">
+                    <div>
+                      <p className="text-2xl font-bold text-white">
+                        {education.gpa}
+                      </p>
+                      <p className="text-xs text-zinc-500 uppercase">GPA</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-white">
+                        {education.grad}
+                      </p>
+                      <p className="text-xs text-zinc-500 uppercase">
+                        Graduating
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="mt-4 space-y-1.5">
+                    {education.honors.map((honor) => (
+                      <li key={honor} className="text-sm text-zinc-300">
+                        {honor}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
+                  <p className="text-xs tracking-[0.2em] text-zinc-500 uppercase">
+                    Before
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold text-white">
+                    {education.priorSchool.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    {education.priorSchool.location} &middot; Class of{" "}
+                    {education.priorSchool.grad}
+                  </p>
+                  <div className="mt-4 flex gap-10">
+                    <div>
+                      <p className="text-2xl font-bold text-white">
+                        {education.priorSchool.gpa}
+                      </p>
+                      <p className="text-xs text-zinc-500 uppercase">GPA</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-white">
+                        {education.priorSchool.sat}
+                      </p>
+                      <p className="text-xs text-zinc-500 uppercase">SAT</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
         <section
           id="work"
           className="scroll-mt-20 border-t border-zinc-900 py-20 md:py-32"
@@ -270,119 +383,6 @@ export default function Home() {
                 </FadeIn>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section
-          id="experience"
-          className="scroll-mt-20 border-t border-zinc-900 py-20 md:py-32"
-        >
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <FadeIn>
-              <SectionHeader
-                eyebrow="Experience"
-                title="Internships, USC orgs, and research"
-              />
-            </FadeIn>
-
-            <ol className="mt-12 space-y-12">
-              {timeline.map((entry) => (
-                <li key={entry.org}>
-                  <FadeIn className="grid gap-3 md:grid-cols-[12rem_1fr] md:gap-10">
-                    <p className="font-mono text-sm text-zinc-500">
-                      {entry.dates}
-                    </p>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">
-                        {entry.org}
-                      </h3>
-                      <p className="mt-1 text-sm text-zinc-400">
-                        {entry.role} &middot; {entry.location}
-                      </p>
-                      <ul className="mt-4 space-y-2">
-                        {entry.bullets.map((bullet) => (
-                          <li
-                            key={bullet}
-                            className="flex gap-3 leading-relaxed text-zinc-300"
-                          >
-                            <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-indigo-400" />
-                            {bullet}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </FadeIn>
-                </li>
-              ))}
-            </ol>
-
-            <FadeIn>
-              <div className="mt-16 grid gap-6 md:grid-cols-2">
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-                  <p className="text-xs tracking-[0.2em] text-zinc-500 uppercase">
-                    Now
-                  </p>
-                  <h3 className="mt-2 text-lg font-semibold text-white">
-                    {education.school}
-                  </h3>
-                  <p className="mt-1 text-sm text-zinc-400">
-                    {education.program}
-                  </p>
-                  <p className="mt-1 text-sm text-zinc-400">
-                    {education.degree}
-                  </p>
-                  <div className="mt-4 flex gap-10">
-                    <div>
-                      <p className="text-2xl font-bold text-white">
-                        {education.gpa}
-                      </p>
-                      <p className="text-xs text-zinc-500 uppercase">GPA</p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-bold text-white">
-                        {education.grad}
-                      </p>
-                      <p className="text-xs text-zinc-500 uppercase">
-                        Graduating
-                      </p>
-                    </div>
-                  </div>
-                  <ul className="mt-4 space-y-1.5">
-                    {education.honors.map((honor) => (
-                      <li key={honor} className="text-sm text-zinc-300">
-                        {honor}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-                  <p className="text-xs tracking-[0.2em] text-zinc-500 uppercase">
-                    Before
-                  </p>
-                  <h3 className="mt-2 text-lg font-semibold text-white">
-                    {education.priorSchool.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-zinc-400">
-                    {education.priorSchool.location} &middot; Class of{" "}
-                    {education.priorSchool.grad}
-                  </p>
-                  <div className="mt-4 flex gap-10">
-                    <div>
-                      <p className="text-2xl font-bold text-white">
-                        {education.priorSchool.gpa}
-                      </p>
-                      <p className="text-xs text-zinc-500 uppercase">GPA</p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-bold text-white">
-                        {education.priorSchool.sat}
-                      </p>
-                      <p className="text-xs text-zinc-500 uppercase">SAT</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
           </div>
         </section>
 

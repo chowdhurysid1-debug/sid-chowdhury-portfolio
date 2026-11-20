@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { FileText } from "lucide-react";
 
 const links = [
+  { label: "Experience", href: "/#experience" },
   { label: "Work", href: "/#work" },
   { label: "Ventures", href: "/#ventures" },
-  { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/#contact" },
 ];
 
