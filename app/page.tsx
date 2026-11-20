@@ -16,6 +16,7 @@ import {
   academicProjects,
   education,
   experience,
+  involvement,
   profile,
   ventures,
 } from "@/data/content";
@@ -47,7 +48,7 @@ function SectionHeader({
 
 export default function Home() {
   const [featured, ...rest] = caseStudies;
-  const timeline = [...experience, ...academicProjects];
+  const timeline = [...experience, ...involvement, ...academicProjects];
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-50">
@@ -280,7 +281,7 @@ export default function Home() {
             <FadeIn>
               <SectionHeader
                 eyebrow="Experience"
-                title="Internships and research"
+                title="Internships, USC orgs, and research"
               />
             </FadeIn>
 
@@ -330,6 +331,22 @@ export default function Home() {
                   <p className="mt-1 text-sm text-zinc-400">
                     {education.degree}
                   </p>
+                  <div className="mt-4 flex gap-10">
+                    <div>
+                      <p className="text-2xl font-bold text-white">
+                        {education.gpa}
+                      </p>
+                      <p className="text-xs text-zinc-500 uppercase">GPA</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-white">
+                        {education.grad}
+                      </p>
+                      <p className="text-xs text-zinc-500 uppercase">
+                        Graduating
+                      </p>
+                    </div>
+                  </div>
                   <ul className="mt-4 space-y-1.5">
                     {education.honors.map((honor) => (
                       <li key={honor} className="text-sm text-zinc-300">

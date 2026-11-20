@@ -13,6 +13,7 @@ import {
   education,
   experience,
   founding,
+  involvement,
   profile,
   skills,
 } from "@/data/content";
@@ -30,6 +31,7 @@ function buildSystemPrompt() {
     about: settingsGroups,
     founding,
     experience,
+    involvement,
     academicProjects,
     education,
     skills,

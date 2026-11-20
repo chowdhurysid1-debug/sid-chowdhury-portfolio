@@ -226,13 +226,14 @@ export const founding: ExperienceEntry[] = [
   {
     org: "EP Venture Fund",
     role: "Co-Founder",
-    location: "Minneapolis, MN",
+    location: "Eden Prairie, MN",
     dates: "Oct 2025 - Present",
     active: true,
     bullets: [
-      "Founded a student-run venture fund from scratch, building the fiscal sponsorship structure through the Foundation for Eden Prairie Schools and all operating infrastructure.",
-      "Sourced and screened 22 student ventures and funded 3: an animation studio, a chef marketplace platform, and a coordination platform for families managing an aging parent's care. Deployed $22,375 in non-equity grant capital.",
-      "Advised the animation studio on pricing and go-to-market, raising projected average contract value 62% and generating 11 qualified leads and 4 pilot clients. Advised the chef marketplace on a 15% commission model, onboarding 18 chefs and driving 21 pilot bookings.",
+      "Lead a student-run venture fund fiscally sponsored by the Foundation for Eden Prairie Schools (FEPS).",
+      "Run sourcing and due diligence for student founders, deploying $22,375 in non-equity grants across 3 ventures.",
+      "Advise portfolio animation studio on go-to-market and pricing, helping raise average contract value 62% and land 4 pilot clients.",
+      "Advise portfolio chef marketplace on unit economics, designing a 15% commission model; onboarded 18 chefs, 21 bookings.",
     ],
   },
   {
@@ -268,20 +269,20 @@ export const experience: ExperienceEntry[] = [
     dates: "Jul 2025 - Sep 2025",
     active: false,
     bullets: [
-      "Managed a live $10K portfolio across 18 trades using technical analysis and options, returning 27.8% over 12 weeks.",
-      "Executed an options trade that returned 450%, based on analysis of volatility, pricing and risk-reward.",
-      "Researched 55 public equities through comps and 10-K/10-Q review; 18 theses advanced to active trading.",
+      "Returned 27.8% in 12 weeks managing a live $10K portfolio across 18 trades using technical analysis and options.",
+      "Executed an options trade generating a 450% return, driven by analysis of volatility, pricing, and risk-reward dynamics.",
+      "Researched 55 public equities via comps and 10-K/10-Q review; 18 theses advanced to active trading.",
     ],
   },
   {
-    org: "CliftonLarsonAllen (CLA)",
+    org: "CliftonLarsonAllen",
     role: "Finance and Accounting Intern",
     location: "Minneapolis, MN",
     dates: "Jun 2025 - Jul 2025",
     active: false,
     bullets: [
-      "Prepared 12 tax filings and planning analyses for 8 clients using financial statement review and Excel modeling.",
-      "Built 5-year budget projections for nonprofit Black Men Teach on a $50K budget and presented to 4 CLA executives, winning first place in a national intern competition.",
+      "Prepared tax filings and planning analysis for 8 clients using financial statement review and Excel modeling.",
+      "Led financial modeling for nonprofit Black Men Teach, presenting multi-year budget projections to CLA executives in a national intern competition.",
     ],
   },
   {
@@ -297,17 +298,52 @@ export const experience: ExperienceEntry[] = [
   },
 ];
 
+// USC organizations, from the resume's Leadership and Involvement section.
+export const involvement: ExperienceEntry[] = [
+  {
+    org: "Business Technology Group",
+    role: "Cloud Member",
+    location: "Los Angeles, CA",
+    dates: "Sep 2026 - Present",
+    active: true,
+    bullets: [
+      "Conduct consumer research and competitive benchmarking to develop Gen Z digital marketing strategies for Tesla.",
+    ],
+  },
+  {
+    org: "Los Angeles Community Impact",
+    role: "Local Consultant",
+    location: "Los Angeles, CA",
+    dates: "Sep 2026 - Present",
+    active: true,
+    bullets: [
+      "Advise Sister Angel Foundation (SAFE) on funding diversification through grants, corporate partnerships, and individual giving.",
+    ],
+  },
+  {
+    org: "Trojan Investing Society",
+    role: "Capstone Member",
+    location: "Los Angeles, CA",
+    dates: "Sep 2026 - Present",
+    active: true,
+    bullets: [
+      "Training in investment banking technicals: accounting, DCF, comps, precedent transactions, and LBO and M&A modeling.",
+    ],
+  },
+];
+
 export const academicProjects: ExperienceEntry[] = [
   {
-    org: "Coastal Real Estate Risk Research",
+    org: "Coastal Real Estate Research, Sea-Level Rise",
     role: "Co-Author, with Prof. Avijit Gangopadhyay (UMass Dartmouth)",
     location: "Middle East, sea-level rise",
     dates: "Jun 2025 - Aug 2026",
     active: true,
     bullets: [
-      "Co-authored a paper on the financial risks of rising sea levels to Middle East coastal real estate, integrating environmental science, economics, and valuation methodology. In the publication process.",
-      "Reviewed 20+ peer-reviewed papers and analyzed satellite-derived oceanographic data across Middle Eastern coastlines.",
-      "Built an MLR valuation model across 1,200+ observations (R² = 0.71) projecting up to 18% value deterioration in high-risk zones, presented to 8 real estate firms in Dubai and the UAE and contributing to updated risk disclosure processes.",
+      "Co-authored research on coastal real estate valuation and sea-level rise; under review at International Real Estate Review.",
+      "Analyzed satellite-derived sea-level, tidal, and elevation data across Middle Eastern coastlines.",
+      "Built an MLR valuation model on 1,200+ observations (R² = 0.71), projecting up to 18% value loss in high-risk zones.",
+      "Presented regression-based risk projections to 8 UAE real estate firms; 3 updated their risk disclosures.",
     ],
   },
 ];
@@ -317,7 +353,8 @@ export const education = {
   program: "Marshall School of Business + Iovine and Young Academy",
   degree: "B.S., Business of Innovation (BUIN)",
   location: "Los Angeles, CA",
-  grad: "May 2030",
+  grad: "May 2029",
+  gpa: "4.0",
   honors: [
     "IYA Faculty Scholar (top 6%)",
     "Holasek-Griffiths Scholarship in Business (top 0.13%)",
@@ -325,11 +362,8 @@ export const education = {
   ],
   coursework: [
     "Calculus 1+2",
-    "AP Macroeconomics",
-    "AP Statistics",
-    "AP Microeconomics",
     "Innovators Forum",
-    "PM for Challenge-Based Learning",
+    "Product Management for Challenge-Based Learning",
   ],
   priorSchool: {
     name: "Eden Prairie High School",
@@ -342,13 +376,10 @@ export const education = {
 
 export const skills = {
   technical: [
-    "Startup evaluation",
-    "Go-to-market strategy",
-    "Market research",
-    "Financial modeling",
-    "Product strategy",
-    "Data analysis",
-    "Excel",
+    "Excel (Financial Modeling)",
+    "DCF Valuation",
+    "Financial Statement Analysis",
+    "Multiple Linear Regression",
   ],
   languages: ["English", "French", "Hindi", "Bengali"],
   interests: [
