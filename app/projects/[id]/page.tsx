@@ -7,7 +7,10 @@ import { FadeIn } from "@/components/portfolio/FadeIn";
 import { caseStudies } from "@/data/caseStudies";
 
 export function generateStaticParams() {
-  return caseStudies.map((study) => ({ id: study.id }));
+  // Courtside Connect has its own long-scroll page at app/projects/courtside.
+  return caseStudies
+    .filter((study) => study.id !== "courtside")
+    .map((study) => ({ id: study.id }));
 }
 
 export const dynamicParams = false;
